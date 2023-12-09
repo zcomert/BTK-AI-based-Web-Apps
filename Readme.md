@@ -1,3 +1,11 @@
+# İçerikler
+## 1. Gün
+* HTML Pratikleri
+* CSS Pratikleri
+* JavaScript Pratikleri
+* Yapay Zekaya Giriş
+* Teachable Machine ile Model Geliştirme
+
 # Yapay Zeka 
 1. Problem tanımı ve kapsamı
 2. Veri seti 
@@ -13,3 +21,4 @@
     * Batch Size 
 4. Model değerlendirmesi 
 5. Model kullanımı
+
