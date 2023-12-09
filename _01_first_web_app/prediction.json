@@ -1,0 +1,18 @@
+[
+    {
+        "className": "Anahtar",
+        "probability": 0.0006452478701248765
+    },
+    {
+        "className": "Telefon",
+        "probability": 0.13413435220718384
+    },
+    {
+        "className": "Su",
+        "probability": 0.0051523661240935326
+    },
+    {
+        "className": "Not Defteri",
+        "probability": 0.8600680232048035
+    }
+]
