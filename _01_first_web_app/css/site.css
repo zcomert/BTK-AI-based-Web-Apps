@@ -1,0 +1,22 @@
+#label-container {
+    font-size: 2em;
+}
+
+#label-container div {
+    background-color: #fafafa;
+    border-bottom: 2px solid #ccc;
+    padding: 5px;
+    margin: 5px;
+}
+#label-container div:hover {
+    background-color: #f7facb;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+canvas {
+    border: 5px solid #5fbdff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Gölge efekti */
+    border-radius: 15px;
+}

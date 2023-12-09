@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/site.css">
     <title>AI</title>
 
 </head>
@@ -45,26 +46,26 @@
                         <a class="nav-link disabled text-white" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+
             </div>
         </div>
     </nav>
 
-    <div class="text-center">
+    <div class="text-center mt-5">
         <div class="lead">Başlamak için lütfen aşağıdaki Başla düğmesine tıklayın.</div>
-        <button class="btn btn-outline-primary" type="button" onclick="init()">Başla</button>
+        <button class="btn btn-outline-primary mt-3" type="button" onclick="init()">Başla</button>
+
+        <button class="btn btn-outline-danger mt-3" type="button" onclick="stop()">Durdur</button>
+
     </div>
 
     <!-- 12 parçalık bir grid sitemi sağlar -->
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
+        <div class="row my-3">
+            <div class="col-sm-12 col-md-3">
                 <div id="webcam-container"></div>
             </div>
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-9">
                 <div id="label-container"></div>
             </div>
         </div>
@@ -76,6 +77,16 @@
         src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 
     <script type="text/javascript">
+
+        function clear() {
+            document.getElementById("webcam-container").innerHTML = "";
+            document.getElementById("label-container").innerHTML = "";
+        }
+
+        function stop() {
+            webcam.stop();
+            clear();
+        }
         // More API functions here:
         // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
@@ -86,6 +97,7 @@
 
         // Load the image model and setup the webcam
         async function init() {
+            clear();
             console.log("init çalıştı....");
             const modelURL = URL + "model.json";
             const metadataURL = URL + "metadata.json";
@@ -125,9 +137,12 @@
             for (let i = 0; i < maxPredictions; i++) {
                 const classPrediction =
                     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                console.log(prediction[i].probability)
                 labelContainer.childNodes[i].innerHTML = classPrediction;
             }
         }
+
+
     </script>
     <!-- Bootstrap JS ve Popper.js (isteğe bağlı) -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
