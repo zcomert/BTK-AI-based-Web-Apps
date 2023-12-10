@@ -15,16 +15,19 @@
 </head>
 
 <body>
+    <!--
     <label>İsim</label>
-    <input id="name" />
+     <input id="name" />
     <button onclick="send()">Gönder</button>
     <button onclick="drawGraph()">Çiz</button>
-    <div id="result"></div>
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    <div id="result"></div> 
+    -->
+    <div id="name"></Main></div>
+    <div id="piechart" style="width: 450px; height: 250px;"></div>
 
     <div>Teachable Machine Audio Model</div>
     <button type="button" onclick="init()">Start</button>
-    <div id="label-container"></div>
+    <div id="label-container" style="display: none;"></div>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script
         src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands@0.4.0/dist/speech-commands.min.js"></script>
@@ -75,7 +78,7 @@
                 includeSpectrogram: true, // in case listen should return result.spectrogram
                 probabilityThreshold: 0.75,
                 invokeCallbackOnNoiseAndUnknown: true,
-                overlapFactor: 0.50 // probably want between 0.5 and 0.75. More info in README
+                overlapFactor: 0.95 // probably want between 0.5 and 0.75. More info in README
             });
 
             // Stop the recognition in 5 seconds.
@@ -93,11 +96,12 @@
         function changeBackground(image) {
             let imageUrl = `/images/${image}.jpg`;
             document.body.style.backgroundImage = `url(${imageUrl})`;
+            
         }
 
         function drawGraph(classLabels, scores) {
 
-            console.log(classLabels, scores)
+            // console.log(classLabels, scores)
             var data = new google.visualization.DataTable();
 
             data.addColumn('string', 'Sanatçı');
@@ -107,15 +111,29 @@
             for (let index = 0; index < classLabels.length; index++) {
                 data.addRow([classLabels[index], scores[index]])
             }
-           
+
+            changeBackground(classLabels[getMaxIndex(scores, classLabels)])
+
             var options = {
                 title: 'AI Sonuçları',
-                pieHole: 0.01
+                pieHole: 0.01,
+                // backgroundColor: {fill:"transparent"}
+
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
             chart.draw(data, options);
+        }
+
+        function getMaxIndex(scores, classLabels) {
+            let max = 0;
+            for (let index = 0; index < scores.length; index++) {
+                if (scores[index] > scores[max])
+                    max = index
+            }
+            document.getElementById("name").innerHTML = classLabels[max];
+            return max;
         }
     </script>
 </body>
