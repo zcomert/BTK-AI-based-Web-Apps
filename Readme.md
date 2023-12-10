@@ -5,6 +5,15 @@
 * JavaScript Pratikleri
 * Yapay Zekaya Giriş
 * Teachable Machine ile Model Geliştirme
+* İmgeler Üzerinde Çalışma
+* İmge Sınıflandıran Web Uygulaması
+
+## 2. Gün
+* HTML, CSS, JavaScript Pratikleri
+* Yapay Zeka Modellerinin Hesaplamalı Yaklaşımı
+* Katmanları ve Aktivasyon Fonksiyonlarını Anlamak
+* Ses Verileri Üzerinde Çalışmak
+* Ses Sınıflandıran Web Uygulaması
 
 # Yapay Zeka 
 1. Problem tanımı ve kapsamı
