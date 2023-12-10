@@ -7,8 +7,8 @@ body{
 
 #piechart{
     position: absolute;
-    left:20px;
-    bottom:20px;
+    left:25px;
+    bottom:25px;
     border-radius: 15px;
 }
 
@@ -24,4 +24,10 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
 
+}
+
+#audio{
+    position: absolute;
+    right: 25px;
+    top:25px;
 }
