@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ses Sınıflandırma Uygulaması</title>
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+
+<body>
+    <label>İsim</label>
+    <input id="name" />
+    <button onclick="Send()">Gönder</button>
+    <div id="result"></div>
+
+    <script>
+        function Send() {
+            let name = document.getElementById("name").value;
+            document.getElementById("result").innerHTML = name;
+            ChangeBackground(name);
+        }
+
+        function ChangeBackground(image) {
+            let imageUrl = `/images/${image}.jpg`;
+            document.body.style.backgroundImage = `url(${imageUrl})`;
+        }
+    </script>
+</body>
+
+</html>
