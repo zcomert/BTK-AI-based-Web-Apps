@@ -7,12 +7,59 @@
     <link rel="stylesheet" href="site.css">
 </head>
 <body>
-    Pose App
+    <h1>Pose App</h1>
 
      <canvas id="myCanvas" 
      width="500" 
-     height="500" 
-     style="border:1px solid #000;">
-    </canvas>
+     height="500"></canvas>
+
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+
+        // Kare nesnesi tanımla
+        var square = {
+            x: 225,
+            y: 225,
+            width: 50,
+            height: 50,
+            color: "blue"
+        };
+
+        function drawSquare() {
+            context.clearRect(0, 0, canvas.width, canvas.height); // Önceki çizimi temizle
+            context.beginPath();
+            context.rect(square.x, square.y, square.width, square.height);
+            context.fillStyle = square.color; // Doldurma rengi
+            context.fill(); // Kareyi doldur
+            context.stroke(); // Kareyi çiz
+        }
+
+        function handleMove(event) {
+            let n = 5;
+            switch(event.key) {
+                case "ArrowUp":
+                    square.y -= n;
+                    break;
+                case "ArrowDown":
+                    square.y += n;
+                    break;
+                case "ArrowLeft":
+                    square.x -= n;
+                    break;
+                case "ArrowRight":
+                    square.x += n;
+                    break;
+            }
+            drawSquare(); // Yeni pozisyonda kareyi çiz
+        }
+        
+        // Klavye olaylarını dinle
+        window.addEventListener("keydown", handleMove);
+
+        drawSquare(); // Başlangıçta kareyi çiz
+      
+    </script>
 </body>
 </html>
