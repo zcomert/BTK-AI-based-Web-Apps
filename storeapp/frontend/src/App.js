@@ -1,13 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 import Counter from './basic/Counter';
+import EmployeeList from './basic/EmployeeList';
 
 
 function App() {
   return (
     <div>
-      Merhaba React.
+      <div>
+        Merhaba React.
+      </div>
       <Counter />
+      <EmployeeList />
     </div>
   );
 }

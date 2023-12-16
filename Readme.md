@@ -15,6 +15,15 @@
 * Ses Verileri Üzerinde Çalışmak
 * Ses Sınıflandıran Web Uygulaması
 
+
+## 3. Gün
+* HTML, CSS, JavaScript Pratikleri
+* Pose Net Uygulaması
+* React Giriş
+* state Kavramı
+* Component 
+* map() fonksiyonu
+
 # Yapay Zeka 
 1. Problem tanımı ve kapsamı
 2. Veri seti 
