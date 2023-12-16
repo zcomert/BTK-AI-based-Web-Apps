@@ -6,20 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pose App</title>
     <link rel="stylesheet" href="site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet">
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 </head>
 
 <body>
-    <h1>Pose App</h1>
+    <div id="result" class="info"></div>
+    <div id="coordinate" class="info"></div>
+    <div class="row">
+        <div class="col">
 
-    <div>Teachable Machine Pose Model</div>
-    <button type="button" onclick="init()">Start</button>
-    <div><canvas id="canvas"></canvas></div>
-    <div id="label-container"></div>
+            <div class="text-center">
+                <h1 class="display-3 text-white">Pose App</h1>
+                <p class="lead text-white">Vucüt hareketlerinize göre canvas'daki kareye istediğiniz gibi hareket
+                    ettirebilirsiniz.</p>
+                <p>
+                    <button type="button" class="btn btn-warning btn-large" onclick="init()">Start</button>
+                </p>
+            </div>
+        </div>
+    </div>
 
+    <div class="container">
 
+        <div class="row">
+            <div class="col-md-4">
+                <canvas id="canvas" class="bg"></canvas>
+            </div>
+            <div class="col-md-4">
+                <div id="chart_div" class="bg"></div>
+                <div class="text-white lead" style="display: none;" id="label-container"></div>
 
-    <canvas id="myCanvas" width="500" height="500"></canvas>
-    <div id="result"></div>
+            </div>
+            <div class="col-md-4">
+                <canvas id="myCanvas" class="bg" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+
 
 
     <script>
@@ -42,6 +71,7 @@
             context.fillStyle = square.color; // Doldurma rengi
             context.fill(); // Kareyi doldur
             context.stroke(); // Kareyi çiz
+            document.getElementById("coordinate").innerHTML = `${square.x},${square.y}`;
         }
 
         let n = 5;
@@ -106,7 +136,7 @@
             maxPredictions = model.getTotalClasses();
 
             // Convenience function to setup a webcam
-            const size = 200;
+            const size = 400;
             const flip = true; // whether to flip the webcam
             webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
             await webcam.setup(); // request access to the webcam
@@ -165,6 +195,7 @@
             }
             const result = document.getElementById("result");
             result.innerHTML = prediction[maxIndex].className;
+            drawChart(prediction)
             return prediction[maxIndex].className;
         }
 
@@ -179,6 +210,43 @@
                     tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
                 }
             }
+        }
+    </script>
+
+    <script type="text/javascript">
+
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', { 'packages': ['corechart'] });
+
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Callback that creates and populates a data table,
+        // instantiates the pie chart, passes in the data and
+        // draws it.
+        function drawChart(prediction) {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Key');
+            data.addColumn('number', 'Probability');
+
+            for (let index = 0; index < prediction.length; index++) {
+                data.addRow([prediction[index].className, prediction[index].probability])
+
+            }
+
+
+            // Set chart options
+            var options = {
+                'title': 'Olasılıklar',
+                'width': 400,
+                'height': 400
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
         }
     </script>
 </body>
