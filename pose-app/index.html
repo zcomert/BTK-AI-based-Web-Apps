@@ -19,6 +19,7 @@
 
 
     <canvas id="myCanvas" width="500" height="500"></canvas>
+    <div id="result"></div>
 
 
     <script>
@@ -136,7 +137,8 @@
                 labelContainer.childNodes[i].innerHTML = classPrediction;
             }
 
-            console.log(getClassName(prediction));
+            // console.log(getClassName(prediction));
+            getClassName(prediction)
 
             // finally draw the poses
             drawPose(pose);
@@ -155,6 +157,8 @@
                 }
 
             }
+            const result = document.getElementById("result");
+            result.innerHTML = prediction[maxIndex].className;
             return prediction[maxIndex].className;
         }
 

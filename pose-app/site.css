@@ -5,3 +5,12 @@ body {
 #myCanvas {
     border: 1px solid #000;
 }
+
+#result {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 10px;
+    background-color: #f00;
+    color: #fff;
+}
