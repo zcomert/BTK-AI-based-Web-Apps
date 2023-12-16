@@ -128,6 +128,7 @@
             const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
             // Prediction 2: run input through teachable machine classification model
             const prediction = await model.predict(posenetOutput);
+            // console.log(prediction)
 
             for (let i = 0; i < maxPredictions; i++) {
                 const classPrediction =
@@ -135,9 +136,28 @@
                 labelContainer.childNodes[i].innerHTML = classPrediction;
             }
 
+            console.log(getClassName(prediction));
+
             // finally draw the poses
             drawPose(pose);
         }
+
+        function getClassName(prediction) {
+            if (!prediction || prediction.length === 0) {
+                return null;
+            }
+
+            let maxIndex = 0;
+            for (let index = 0; index < prediction.length; index++) {
+                if (prediction[index].probability >= prediction[maxIndex].probability) {
+                    // max probability değişmeli
+                    maxIndex = index;
+                }
+
+            }
+            return prediction[maxIndex].className;
+        }
+
 
         function drawPose(pose) {
             if (webcam.canvas) {
