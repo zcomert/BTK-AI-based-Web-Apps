@@ -44,9 +44,16 @@
             context.stroke(); // Kareyi çiz
         }
 
+        let n = 5;
+
         function handleMove(event) {
-            let n = 5;
-            switch (event.key) {
+            move(event.key);
+            console.log(`${square.x},${square.y}`)
+        }
+
+        function move(key) {
+            console.log(key)
+            switch (key) {
                 case "ArrowUp":
                     if (square.y - n >= 0) {
                         square.y -= n;
@@ -68,7 +75,6 @@
                     }
                     break;
             }
-            console.log(`${square.x},${square.y}`)
             drawSquare(); // Yeni pozisyonda kareyi çiz
         }
 
@@ -138,7 +144,7 @@
             }
 
             // console.log(getClassName(prediction));
-            getClassName(prediction)
+            move(getClassName(prediction))
 
             // finally draw the poses
             drawPose(pose);
