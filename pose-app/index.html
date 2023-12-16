@@ -40,18 +40,27 @@
             let n = 5;
             switch(event.key) {
                 case "ArrowUp":
-                    square.y -= n;
+                    if (square.y - n >= 0) {
+                        square.y -= n;
+                    }
                     break;
                 case "ArrowDown":
-                    square.y += n;
+                    if (square.y + square.height + n <= canvas.height) {
+                        square.y += n;
+                    }
                     break;
                 case "ArrowLeft":
-                    square.x -= n;
+                    if (square.x - n >= 0) {
+                        square.x -= n;
+                    }
                     break;
                 case "ArrowRight":
-                    square.x += n;
+                    if (square.x + square.width + n <= canvas.width) {
+                        square.x += n;
+                    }
                     break;
             }
+            console.log(`${square.x},${square.y}`)
             drawSquare(); // Yeni pozisyonda kareyi çiz
         }
         
