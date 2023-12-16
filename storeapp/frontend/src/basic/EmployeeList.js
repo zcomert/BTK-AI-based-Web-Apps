@@ -1,3 +1,5 @@
+import Employee from "./Employee";
+
 const EmployeeList = () => {
 
     const employees = [
@@ -10,19 +12,12 @@ const EmployeeList = () => {
     return (
         <div>
             {
-                employees.map((emp) => (<div key={emp?.id} >
-                    <h1>
-                        {emp?.firstName}
-                        {emp?.lastName}
-                    </h1>
-                    <p>
-                        {emp?.salary}
-                    </p>
-                    <hr />
-                </div>))
+                employees.map((emp) => (
+                    <div key={emp?.id} >
+                        <Employee employee={emp} />
+                    </div>))
             }
         </div>
     )
 }
-
 export default EmployeeList;
