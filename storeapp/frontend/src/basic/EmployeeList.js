@@ -1,3 +1,4 @@
+import Header from "../components/header/Header";
 import Employee from "./Employee";
 
 const EmployeeList = () => {
@@ -11,6 +12,7 @@ const EmployeeList = () => {
     ];
     return (
         <div>
+            <Header data={{ title: "Çalışanlar" }}></Header>
             {
                 employees.map((emp) => (
                     <div key={emp?.id} >
