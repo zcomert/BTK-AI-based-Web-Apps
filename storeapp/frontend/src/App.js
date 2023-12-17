@@ -7,6 +7,7 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Home from './pages/home/Home';
 import Products from './pages/products/Products';
+import ProductDetail from './pages/productDetail/ProductDetail';
 
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
           <Route path='/employees' element={<EmployeeList />}></Route>
           <Route path='/contact' element={<Contact />}></Route>
           <Route path='/products' element={<Products />}></Route>
-          <Route path='/' element={<Home />}></Route>
+          <Route path='/productdetail/:id' element={<ProductDetail />}></Route>
+          <Route path='/' exact element={<Home />}></Route>
         </Routes>
       </main>
 

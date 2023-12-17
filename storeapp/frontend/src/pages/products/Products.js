@@ -1,6 +1,7 @@
 import React from 'react'
 import { products } from './ProductsData'
 import Product from '../product/Product'
+import { Link } from 'react-router-dom'
 export default function Products() {
     return (
         <div>
@@ -10,7 +11,7 @@ export default function Products() {
 
             <ul>
                 {products?.map((prd) => (<li>
-                    <Product product={prd} />
+                    <Link to={`/productdetail/${prd?.id}`}>{prd?.name}</Link>
                 </li>))}
             </ul>
 
