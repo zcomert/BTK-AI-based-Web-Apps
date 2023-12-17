@@ -9,6 +9,9 @@ export default function Navbar() {
                     <Link to="/">Ana Sayfa</Link>
                 </li>
                 <li>
+                    <Link to="/products">Ürünler</Link>
+                </li>
+                <li>
                     <Link to="/employees">Çalışanlar</Link>
                 </li>
                 <li>

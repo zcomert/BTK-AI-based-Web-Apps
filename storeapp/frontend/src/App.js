@@ -6,6 +6,7 @@ import Contact from './basic/Contact';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Home from './pages/home/Home';
+import Products from './pages/products/Products';
 
 
 function App() {
@@ -14,13 +15,14 @@ function App() {
       <header>
         <Navbar />
       </header>
-      
+
       <main>
         <Routes>
           <Route path='/counter' element={<Counter />}></Route>
           <Route path='/employees' element={<EmployeeList />}></Route>
           <Route path='/contact' element={<Contact />}></Route>
-          <Route path='/'  element={<Home />}></Route>
+          <Route path='/products' element={<Products />}></Route>
+          <Route path='/' element={<Home />}></Route>
         </Routes>
       </main>
 
