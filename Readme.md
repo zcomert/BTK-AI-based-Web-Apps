@@ -24,6 +24,15 @@
 * Component 
 * map() fonksiyonu
 
+## 4. Gün
+* React Router Dom
+* BrowserRouter
+* Routes
+* Route
+* useParams
+* storeapp frontend uygulaması
+
+
 # Yapay Zeka 
 1. Problem tanımı ve kapsamı
 2. Veri seti 
