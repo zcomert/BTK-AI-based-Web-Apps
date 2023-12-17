@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { products } from '../products/ProductsData';
+import Comments from './Comments';
 
 export default function ProductDetail() {
 
@@ -27,6 +28,9 @@ export default function ProductDetail() {
             <p>
                 {selectedProduct?.price}
             </p>
+            <hr />
+            <h2>Müşteri İncelemeleri</h2>
+            <Comments comments={selectedProduct?.comments} />
             <p>
                 <Link to="/products">Ürünler</Link>
             </p>
