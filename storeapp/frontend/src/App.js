@@ -13,6 +13,7 @@ function App() {
       <header>
         <Navbar />
       </header>
+      
       <main>
         <Routes>
           <Route path='/counter' element={<Counter />}></Route>
@@ -20,13 +21,10 @@ function App() {
           <Route path='/contact' element={<Contact />}></Route>
         </Routes>
       </main>
+
       <footer>
         <Footer></Footer>
       </footer>
-
-
-
-
     </div>
   );
 }
