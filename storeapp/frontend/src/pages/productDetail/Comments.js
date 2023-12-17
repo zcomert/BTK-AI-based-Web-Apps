@@ -9,6 +9,7 @@ export default function Comments({ comments }) {
     }
     return (
         <>
+            <h2>Müşteri İncelemeleri</h2>
             <div>Yorumlar {comments.length}</div>
             <ul>
                 {comments?.map((c) => (

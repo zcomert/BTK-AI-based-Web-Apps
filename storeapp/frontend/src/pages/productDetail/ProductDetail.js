@@ -29,7 +29,7 @@ export default function ProductDetail() {
                 {selectedProduct?.price}
             </p>
             <hr />
-            <h2>Müşteri İncelemeleri</h2>
+
             <Comments comments={selectedProduct?.comments} />
             <p>
                 <Link to="/products">Ürünler</Link>

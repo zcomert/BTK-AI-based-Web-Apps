@@ -8,13 +8,15 @@ import Footer from './components/footer/Footer';
 import Home from './pages/home/Home';
 import Products from './pages/products/Products';
 import ProductDetail from './pages/productDetail/ProductDetail';
+import ResponsiveAppBar from './components/navbar/ResponsiveAppBar';
+
 
 
 function App() {
   return (
     <div>
       <header>
-        <Navbar />
+        <ResponsiveAppBar />
       </header>
 
       <main>
