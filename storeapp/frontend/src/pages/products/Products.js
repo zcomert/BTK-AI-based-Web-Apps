@@ -1,5 +1,6 @@
 import React from 'react'
 import { products } from './ProductsData'
+import Product from '../product/Product'
 export default function Products() {
     return (
         <div>
@@ -9,7 +10,7 @@ export default function Products() {
 
             <ul>
                 {products?.map((prd) => (<li>
-                    {prd?.name}
+                    <Product product={prd} />
                 </li>))}
             </ul>
 
