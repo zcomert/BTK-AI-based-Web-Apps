@@ -31,9 +31,14 @@ function ResponsiveAppBar() {
         setAnchorElUser(event.currentTarget);
     };
 
-    const handleCloseNavMenu = (url) => {
+    const handleCloseNavMenu = (url = "") => {
         setAnchorElNav(null);
-        navigate(url);
+        if (url === "") {
+
+        }
+        else {
+            navigate(url);
+        }
     };
 
     const handleCloseUserMenu = () => {
@@ -60,7 +65,7 @@ function ResponsiveAppBar() {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        STORE
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -87,14 +92,14 @@ function ResponsiveAppBar() {
                                 horizontal: 'left',
                             }}
                             open={Boolean(anchorElNav)}
-                            onClose={handleCloseNavMenu}
+                            onClose={() => handleCloseNavMenu("/")}
                             sx={{
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page?.id}
-                                    onClick={handleCloseNavMenu}>
+                                    onClick={() => handleCloseNavMenu(page?.url)}>
                                     <Typography textAlign="center">{page?.name}</Typography>
                                 </MenuItem>
                             ))}
@@ -117,7 +122,7 @@ function ResponsiveAppBar() {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        STORE
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
