@@ -10,7 +10,7 @@ export default function Header({ data }) {
     };
 
     return (
-        <Container sx={style} maxWidth="xl">
+        <Container sx={style} maxWidth="xxl">
             <Typography variant="h2" gutterBottom>
                 {data?.title}
             </Typography>

@@ -9,6 +9,7 @@ import Home from './pages/home/Home';
 import Products from './pages/products/Products';
 import ProductDetail from './pages/productDetail/ProductDetail';
 import ResponsiveAppBar from './components/navbar/ResponsiveAppBar';
+import Book from './basic/Book';
 
 
 
@@ -21,6 +22,7 @@ function App() {
 
       <main>
         <Routes>
+          <Route path='/book' element={<Book />}></Route>
           <Route path='/counter' element={<Counter />}></Route>
           <Route path='/employees' element={<EmployeeList />}></Route>
           <Route path='/contact' element={<Contact />}></Route>
