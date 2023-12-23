@@ -32,6 +32,13 @@
 * useParams
 * storeapp frontend uygulaması
 
+## 5. Gün
+* Form Tanımı
+* Form Kontrolü
+* Form Doğrulaması
+* ``formik`` Kütüphanesi
+* ``yup`` Kütüphanesi
+
 
 # Yapay Zeka 
 1. Problem tanımı ve kapsamı
