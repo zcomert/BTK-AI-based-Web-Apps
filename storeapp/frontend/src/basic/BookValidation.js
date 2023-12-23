@@ -5,6 +5,7 @@ const BookValidationSchema = Yup.object().shape({
 
     price: Yup
         .number()
+        .typeError('Lütfen geçerli fiyat giriniz.')
         .positive('Sifirdan kucuk olamaz')
         .required('Fiyat bilgisi boş bırakılamaz')
         .min(10, 'Fiyatı 10 küçük olamaz.')

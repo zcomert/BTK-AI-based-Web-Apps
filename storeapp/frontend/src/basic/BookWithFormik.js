@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from '../components/header/Header'
 import { useFormik } from 'formik';
+import BookValidationSchema from './BookValidation'
+
 
 function BookWithFormik() {
 
@@ -13,28 +15,51 @@ function BookWithFormik() {
         onSubmit: (values) => {
             console.log(values)
             formik.resetForm();
-        }
+        },
+        validationSchema: BookValidationSchema
     });
 
     return (
         <>
             <Header data={{ title: "Formik ile Form Kontrolü" }} />
             <form onSubmit={formik.handleSubmit} >
-                <input
-                    onChange={formik.handleChange}
-                    name="title"
-                    value={formik.values.title}
-                />
+                <div>
+                    <input
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        name="title"
+                        value={formik.values.title}
+                    />
+                    {
+                        (formik.errors.title && formik.touched.title) &&
+                        <div>{formik.errors.title}</div>}
+                </div>
 
-                <input
-                    onChange={formik.handleChange}
-                    value={formik.values.price}
-                    name="price" />
+                <div>
 
-                <input
-                    onChange={formik.handleChange}
-                    value={formik.values.author}
-                    name="author" />
+                    <input
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.price}
+                        name="price" />
+
+                    {formik.errors.price && formik.touched.price
+                        ? <div>{formik.errors.price}</div>
+                        : null
+                    }
+                </div>
+
+                <div>
+                    <input
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.author}
+                        name="author" />
+
+                    {(formik.errors.author && formik.touched.author) &&
+                        <div>{formik.errors.author}</div>
+                    }
+                </div>
 
                 <input type="submit" />
             </form>
