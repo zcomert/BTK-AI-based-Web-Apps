@@ -39,7 +39,8 @@ export default function ProductDetail() {
                 <Comments selectedProduct={selectedProduct} />
 
                 <p>
-                    <NewComment />
+                    <NewComment selectedProduct={selectedProduct}
+                        setSelectedProduct={setSelectedProduct} />
                 </p>
 
                 <p>
