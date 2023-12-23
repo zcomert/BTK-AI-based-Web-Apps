@@ -11,6 +11,7 @@ import ProductDetail from './pages/productDetail/ProductDetail';
 import ResponsiveAppBar from './components/navbar/ResponsiveAppBar';
 import Book from './basic/Book';
 import BookWithFormik from './basic/BookWithFormik';
+import ArrayManipulation from './basic/ArrayManipulation';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 
       <main>
         <Routes>
+          <Route path='/array' element={<ArrayManipulation />}></Route>
           <Route path='/bookwithformik' element={<BookWithFormik />}></Route>
           <Route path='/book' element={<Book />}></Route>
           <Route path='/counter' element={<Counter />}></Route>

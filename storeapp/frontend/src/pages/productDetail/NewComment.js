@@ -10,7 +10,13 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
             text: ''
         },
         onSubmit: (values) => {
-            console.log(values)
+            setSelectedProduct({
+                ...selectedProduct,
+                comments: [
+                    ...selectedProduct.comments,
+                    values
+                ]
+            })
         }
     })
 
