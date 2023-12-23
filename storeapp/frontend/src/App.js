@@ -10,7 +10,7 @@ import Products from './pages/products/Products';
 import ProductDetail from './pages/productDetail/ProductDetail';
 import ResponsiveAppBar from './components/navbar/ResponsiveAppBar';
 import Book from './basic/Book';
-
+import BookWithFormik from './basic/BookWithFormik';
 
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
 
       <main>
         <Routes>
+          <Route path='/bookwithformik' element={<BookWithFormik />}></Route>
           <Route path='/book' element={<Book />}></Route>
           <Route path='/counter' element={<Counter />}></Route>
           <Route path='/employees' element={<EmployeeList />}></Route>
