@@ -22,7 +22,19 @@ function ArrayManipulation() {
             <Header data={{ title: "Dizi Manipülasyonu" }}></Header>
             <Container maxWidth="sm">
 
-                
+                <Stack>
+                    {data.map((emp) => (
+                        <div key={emp.firstName}>
+                            <Stack direction="column">
+                                <p>{emp.firstName}</p>
+                                <p>{emp.firstName}</p>
+                                <Button variant='contained' >Sil</Button>
+                            </Stack>
+
+                        </div>
+                    ))}
+                </Stack>
+
 
                 <form onSubmit={formik.handleSubmit}>
                     <Stack spacing={3}>
