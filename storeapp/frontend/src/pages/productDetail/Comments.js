@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Comments({ comments }) {
+export default function Comments({ selectedProduct }) {
 
-    if (comments.length === 0) {
+    if (selectedProduct?.comments.length === 0) {
         return (<div>
             Henüz hiç yorum yapılmadı.
         </div>)
@@ -10,9 +10,9 @@ export default function Comments({ comments }) {
     return (
         <>
             <h2>Müşteri İncelemeleri</h2>
-            <div>Yorumlar {comments.length}</div>
+            <div>Yorumlar {selectedProduct?.comments.length}</div>
             <ul>
-                {comments?.map((c) => (
+                {selectedProduct?.comments?.map((c) => (
                     <li key={c?.id}>
                         {c?.text}
                     </li>))}
