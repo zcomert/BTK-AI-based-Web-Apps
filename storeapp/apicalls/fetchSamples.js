@@ -11,9 +11,20 @@ async function getOneProduct(id) {
             }
             return res.json()
         });
+}
 
+async function getAllProducts() {
+    return await fetch(baseUrl, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "*/*",
+        }
+    })
+        .then(resp => resp.json());
 }
 
 
-const response = await getOneProduct();
+// const response = await getOneProduct();
+const response = await getAllProducts();
 console.log(response);
