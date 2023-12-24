@@ -1,11 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "HP Z Book Notebook",
-      "price": 32000
-    },
-    {
       "id": 2,
       "name": "Airpods",
       "price": 500
