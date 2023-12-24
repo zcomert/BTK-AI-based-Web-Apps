@@ -2,8 +2,88 @@
   "products": [
     {
       "id": 2,
-      "name": "Airpods",
-      "price": 500
+      "name": "AirPods Pro 3",
+      "price": 75000
+    },
+    {
+      "id": 3,
+      "name": "Cheese",
+      "price": 15.27
+    },
+    {
+      "id": 4,
+      "name": "Computer",
+      "price": 721.72
+    },
+    {
+      "id": 5,
+      "name": "Towels",
+      "price": 669.43
+    },
+    {
+      "id": 6,
+      "name": "Tuna",
+      "price": 589.85
+    },
+    {
+      "id": 7,
+      "name": "Car",
+      "price": 83.36
+    },
+    {
+      "id": 8,
+      "name": "Tuna",
+      "price": 966.95
+    },
+    {
+      "id": 9,
+      "name": "Chair",
+      "price": 445.96
+    },
+    {
+      "id": 10,
+      "name": "Hat",
+      "price": 192
+    },
+    {
+      "id": 11,
+      "name": "Car",
+      "price": 788.14
+    },
+    {
+      "id": 12,
+      "name": "Towels",
+      "price": 909.13
+    },
+    {
+      "id": 13,
+      "name": "Pizza",
+      "price": 980.46
+    },
+    {
+      "id": 14,
+      "name": "Bacon",
+      "price": 946.01
+    },
+    {
+      "id": 16,
+      "name": "Sausages",
+      "price": 50.7
+    },
+    {
+      "id": 17,
+      "name": "Chicken",
+      "price": 533.46
+    },
+    {
+      "id": 18,
+      "name": "Bacon",
+      "price": 565.61
+    },
+    {
+      "id": 19,
+      "name": "Salad",
+      "price": 314.91
     }
   ]
 }

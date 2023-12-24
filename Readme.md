@@ -39,6 +39,17 @@
 * ``formik`` Kütüphanesi
 * ``yup`` Kütüphanesi
 
+## 6. Gün
+* API
+* REST, RESTful
+* json-server
+* HTTP İstekleri ve Cevapları
+* HTTP Fiileri 
+* POSTMAN
+* POSTMAN Koleksiyonları
+* POSTMAN Değişkenleri
+* POSTMAN ile API Testi
+
 
 # Yapay Zeka 
 1. Problem tanımı ve kapsamı
@@ -57,8 +68,20 @@
 5. Model kullanımı
 
 # API 
+* API Kavramı
 * REST, RESTful, Web API 
-* Tüm tasarım kaynak etrafında döner. (Resource Orient Architecture)
+* API Tasarımı
+    * Tüm tasarım kaynak etrafında döner. (Resource Orient Architecture)
+    * Query String
+    * Route Data
 * HTTP Filleri (Http Verbs)
-    * GET : Kaynaktan veri almak için kullanılır. Gövdesi olamaz.
+    * GET  
+        - Kaynaktan veri almak için kullanılır. 
+        - Gövdesi olamaz.
+    * POST  
+        - Kaynak oluşturmak için kullanılır.
+    * DELETE 
+        - Kaynak silmek için kullanılır.
+    * PUT  
+        - Kaynak güncellemek için kullanılır.
 
