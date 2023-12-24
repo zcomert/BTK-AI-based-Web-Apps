@@ -1,11 +1,6 @@
 {
   "products": [
     {
-      "id": 2,
-      "name": "AirPods Pro 3",
-      "price": 75000
-    },
-    {
       "id": 3,
       "name": "Cheese",
       "price": 15.27
