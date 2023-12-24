@@ -56,3 +56,9 @@
 4. Model değerlendirmesi 
 5. Model kullanımı
 
+# API 
+* REST, RESTful, Web API 
+* Tüm tasarım kaynak etrafında döner. (Resource Orient Architecture)
+* HTTP Filleri (Http Verbs)
+    * GET : Kaynaktan veri almak için kullanılır. Gövdesi olamaz.
+
