@@ -7,17 +7,14 @@ export default function Products() {
 
     const [products, setProducts] = useState([]);
 
+    const productService = new ProductService();
+
     useEffect(() => {
         const fetchData = async () => {
             const productService = new ProductService();
-            try {
-                const data = await productService.getAllProducts();
-                setProducts(data);
-                console.log(products)
-            } catch (error) {
-                // Hata yönetimi burada ele alınabilir
-                console.error('Error fetching data:', error);
-            }
+            const data = await productService.getAllProducts();
+            setProducts(data);
+            console.log(products)
         };
         fetchData();
     }, []);
