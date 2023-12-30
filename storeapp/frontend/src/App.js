@@ -13,9 +13,13 @@ import Book from './basic/Book';
 import BookWithFormik from './basic/BookWithFormik';
 import ArrayManipulation from './basic/ArrayManipulation';
 import ContextSample from './basic/ContextSample';
+import Loading from './components/loading/Loading';
+import { useContext } from 'react';
+import AppContext from './context/AppContext';
 
 
 function App() {
+  const { load } = useContext(AppContext);
   return (
     <div>
       <header>
@@ -23,6 +27,7 @@ function App() {
       </header>
 
       <main>
+        {load && <Loading />}
         <Routes>
           <Route path='/context' element={<ContextSample />}></Route>
           <Route path='/array' element={<ArrayManipulation />}></Route>

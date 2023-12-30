@@ -12,6 +12,7 @@ export const AppProvider = ({ children }) => {
 
     const [message, setMessage] = useState("Selam");
     const [products, setProducts] = useState(null);
+    const [load, setLoad] = useState(true);
 
     useEffect(() => {
         const productService = new ProductService();
@@ -21,6 +22,8 @@ export const AppProvider = ({ children }) => {
     }, []);
 
     const values = {
+        load,
+        setLoad,
         message,
         setMessage,
         products,
