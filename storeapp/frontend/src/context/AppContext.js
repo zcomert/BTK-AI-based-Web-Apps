@@ -22,7 +22,9 @@ export const AppProvider = ({ children }) => {
 
     const values = {
         message,
-        setMessage
+        setMessage,
+        products,
+        setProducts
     }
 
     return (<AppContext.Provider value={values}>
