@@ -8,7 +8,7 @@ class ProductService {
     async getAllProducts() {
         const { data } = await axios
             .get(this.baseUrl);
-        
+
         return data;
     }
 
@@ -18,6 +18,12 @@ class ProductService {
         const { data } = await axios.get(url);
         return data;
     }
-}
 
+    async updateOneProduct(id, product) {
+        // [PUT] endpoint : localhost:3000/products/:id
+        const url = `${this.baseUrl}/${id}`;
+        const { data } = await axios.put(url, product);
+        return data;
+    }
+}
 export default ProductService;

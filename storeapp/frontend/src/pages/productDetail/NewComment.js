@@ -1,6 +1,7 @@
 import { Button, Input } from '@mui/material';
 import { useFormik } from 'formik';
 import React from 'react'
+import ProductService from '../../services/ProductService';
 
 function NewComment({ setSelectedProduct, selectedProduct }) {
 
@@ -10,13 +11,22 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
             text: ''
         },
         onSubmit: (values) => {
-            setSelectedProduct({
+            
+            const productService = new ProductService();
+
+            const product = {
                 ...selectedProduct,
                 comments: [
                     ...selectedProduct.comments,
                     values
                 ]
-            })
+            };
+            
+            productService
+                .updateOneProduct(product.id, product)
+                .then(resp => setSelectedProduct(resp));
+            
+            formik.resetForm();
         }
     })
 

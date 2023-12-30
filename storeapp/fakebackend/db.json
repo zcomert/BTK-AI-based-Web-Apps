@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Cheese",
       "price": 15.27,
-      "imageUrl":"/images/1.jpg",
+      "imageUrl": "/images/1.jpg",
       "comments": [
         {
           "id": 1,
@@ -15,24 +15,28 @@
     {
       "id": 2,
       "name": "AirPods Pro 3",
-      "price": 75000,
-      "imageUrl":"/images/2.jpg",
+      "price": 576.8,
+      "imageUrl": "/images/1.jpg",
       "comments": [
         {
-          "id": 658,
-          "text": "compress Uganda"
+          "id": 110,
+          "text": "quantifying real-time virtual Human"
         },
         {
-          "id": 171,
-          "text": "indexing hack index Borders"
+          "id": 557,
+          "text": "Keyboard Rustic"
         },
         {
-          "id": 38,
-          "text": "Principal invoice 24/7"
+          "id": 811,
+          "text": "recontextualize pink New Towels"
         },
         {
-          "id": 315,
-          "text": "cutting-edge metrics and Cheese"
+          "id": 922,
+          "text": "Alley Front-line Italy Pound synergies"
+        },
+        {
+          "id": 5,
+          "text": "Öneriyorum, gerçek güzel bir ürün."
         }
       ]
     },
@@ -40,7 +44,7 @@
       "id": 3,
       "name": "Chair",
       "price": 476.63,
-      "imageUrl":"/images/3.jpg",
+      "imageUrl": "/images/3.jpg",
       "comments": [
         {
           "id": 364,
@@ -52,7 +56,7 @@
       "id": 4,
       "name": "Mouse",
       "price": 819.59,
-      "imageUrl":"/images/4.jpg",
+      "imageUrl": "/images/4.jpg",
       "comments": [
         {
           "id": 235,
@@ -64,7 +68,7 @@
       "id": 5,
       "name": "Chips",
       "price": 22.37,
-      "imageUrl":"/images/5.jpg",
+      "imageUrl": "/images/5.jpg",
       "comments": [
         {
           "id": 6,
@@ -76,7 +80,7 @@
       "id": 6,
       "name": "Shirt",
       "price": 766.78,
-      "imageUrl":"/images/6.jpg",
+      "imageUrl": "/images/6.jpg",
       "comments": [
         {
           "id": 792,
