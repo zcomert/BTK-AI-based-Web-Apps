@@ -16,6 +16,7 @@ import ContextSample from './basic/ContextSample';
 import Loading from './components/loading/Loading';
 import { useContext } from 'react';
 import AppContext from './context/AppContext';
+import SimpleSnackBar from './components/simpleSnackBar/SimpleSnackBar';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 
       <main>
         {load && <Loading />}
+        <SimpleSnackBar />
         <Routes>
           <Route path='/context' element={<ContextSample />}></Route>
           <Route path='/array' element={<ArrayManipulation />}></Route>

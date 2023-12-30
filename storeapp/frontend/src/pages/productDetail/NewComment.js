@@ -21,7 +21,7 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
             [e.target.name]: e.target.value
         });
 
-        setProgress(Math.random()*100);
+        setProgress(Math.random() * 100);
     }
 
     const handleSubmit = (e) => {
@@ -37,12 +37,19 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
 
         productService
             .updateOneProduct(product.id, product)
-            .then(resp => setSelectedProduct(resp));
+            .then(resp => {
+                setSelectedProduct(resp)
+                setSnackbar({
+                    open: true,
+                    message: "Yorum başarılı bir şekilde eklendi.",
+                    severity: "success"
+                });
+            });
 
         setValues(initialValues);
     }
 
-    const { setProgress } = useContext(AppContext);
+    const { setProgress, setSnackbar } = useContext(AppContext);
 
 
 

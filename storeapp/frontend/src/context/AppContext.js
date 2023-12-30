@@ -14,6 +14,11 @@ export const AppProvider = ({ children }) => {
     const [products, setProducts] = useState(null);
     const [load, setLoad] = useState(true);
     const [progress, setProgress] = useState(50);
+    const [snackbar, setSnackbar] = useState({
+        open: true,
+        message: "",
+        severity: "info"
+    })
 
     useEffect(() => {
         const productService = new ProductService();
@@ -28,6 +33,8 @@ export const AppProvider = ({ children }) => {
     }, []);
 
     const values = {
+        snackbar,
+        setSnackbar,
         progress,
         setProgress,
         load,
