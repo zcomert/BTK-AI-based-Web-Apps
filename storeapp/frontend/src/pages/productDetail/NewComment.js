@@ -1,7 +1,8 @@
-import { Button, Input, Stack } from '@mui/material';
+import { Button, Input, Stack, TextField } from '@mui/material';
 import { useFormik } from 'formik';
 import React, { useState } from 'react'
 import ProductService from '../../services/ProductService';
+import SendIcon from '@mui/icons-material/Send';
 
 function NewComment({ setSelectedProduct, selectedProduct }) {
 
@@ -42,16 +43,22 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
 
 
     return (
-        <Stack spacing={3}>
-            <form onSubmit={handleSubmit} >
-                <Input
-                    sx={{ display: 'block' }}
+        <form onSubmit={handleSubmit} >
+            <Stack spacing={3}>
+                <TextField
+                    label="Yorum"
+                    variant='outlined'
                     value={values?.text}
                     onChange={handleChange}
+                    multiline
+                    maxRows={3}
                     name="text" />
-                <Button sx={{ mt: 3 }} variant='contained' type="submit">Gönder</Button>
-            </form>
-        </Stack>
+                <Button
+                    startIcon={<SendIcon />}
+                    variant='contained'
+                    type="submit">Gönder</Button>
+            </Stack>
+        </form>
     )
 }
 

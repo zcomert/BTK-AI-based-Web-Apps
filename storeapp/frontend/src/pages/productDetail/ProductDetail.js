@@ -1,16 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import Comments from './Comments';
-import { Container } from '@mui/material';
+import { Button, Container, ListItemIcon } from '@mui/material';
 import Header from '../../components/header/Header';
 import NewComment from './NewComment';
 import AppContext from '../../context/AppContext';
 import ProductService from '../../services/ProductService';
+import MenuIcon from '@mui/icons-material/Menu';
+import ViewListIcon from '@mui/icons-material/ViewList';
 
 export default function ProductDetail() {
 
     const { id } = useParams();
     const { setLoad } = useContext(AppContext);
+    const navigate = useNavigate();
 
     const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -57,7 +60,12 @@ export default function ProductDetail() {
                 </p>
 
                 <p>
-                    <Link to="/products">Ürünler</Link>
+                    <Button
+                        onClick={() => { navigate("/products") }}
+                        startIcon={<ViewListIcon />}
+                        variant='outlined'>
+                        Ürünüler
+                    </Button>
                 </p>
             </Container>
         </>
