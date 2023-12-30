@@ -1,52 +1,56 @@
 import { Button, Input } from '@mui/material';
 import { useFormik } from 'formik';
-import React from 'react'
+import React, { useState } from 'react'
 import ProductService from '../../services/ProductService';
 
 function NewComment({ setSelectedProduct, selectedProduct }) {
 
+    const initialValues = {
+        id: selectedProduct?.comments.length + 1,
+        text: ''
+    };
+
+    const [values, setValues] = useState(initialValues);
+
     const handleChange = (e) => {
-        console.log(e.target.value)
+        setValues({
+            ...values,
+            [e.target.name]: e.target.value
+        });
+
+        console.log(e.target.value);
     }
-    const formik = useFormik({
-        initialValues: {
-            id: selectedProduct?.comments.length + 1,
-            text: ''
-        },
-        onSubmit: (values) => {
 
-            const productService = new ProductService();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const productService = new ProductService();
+        const product = {
+            ...selectedProduct,
+            comments: [
+                ...selectedProduct.comments,
+                values
+            ]
+        };
 
-            const product = {
-                ...selectedProduct,
-                comments: [
-                    ...selectedProduct.comments,
-                    values
-                ]
-            };
+        productService
+            .updateOneProduct(product.id, product)
+            .then(resp => setSelectedProduct(resp));
 
-            productService
-                .updateOneProduct(product.id, product)
-                .then(resp => setSelectedProduct(resp));
-
-            formik.resetForm({
-                ...formik.initialValues
-            });
-        }
+        setValues(initialValues);
+    }
 
 
-    })
 
     return (
         <div>
-            <form onSubmit={formik.handleSubmit} >
+            <form onSubmit={handleSubmit} >
                 <Input
-                    value={formik.values.comment}
-                    onChange={formik.handleChange}
+                    value={values?.text}
+                    onChange={handleChange}
                     name="text" />
                 <Button variant='contained' type="submit">Gönder</Button>
             </form>
-            {JSON.stringify(formik.values)}
+            {JSON.stringify(values)}
         </div>
     )
 }

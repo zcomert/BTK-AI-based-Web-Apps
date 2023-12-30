@@ -18,7 +18,12 @@ export const AppProvider = ({ children }) => {
         const productService = new ProductService();
         productService
             .getAllProducts()
-            .then(resp => setProducts(resp));
+            .then(resp => {
+                setTimeout(() => {
+                    setProducts(resp);
+                    setLoad(false);
+                }, 2000);
+            });
     }, []);
 
     const values = {

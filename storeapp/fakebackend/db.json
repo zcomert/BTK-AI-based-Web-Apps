@@ -17,6 +17,10 @@
         {
           "id": 2,
           "text": "aaaabbbbb"
+        },
+        {
+          "id": 4,
+          "text": "Mükemmel tavsiye ediyorum."
         }
       ]
     },
@@ -45,6 +49,10 @@
         {
           "id": 5,
           "text": "Öneriyorum, gerçek güzel bir ürün."
+        },
+        {
+          "id": 6,
+          "text": "Kasayı beğenmedim."
         }
       ]
     },
