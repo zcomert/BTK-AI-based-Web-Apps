@@ -11,6 +11,13 @@ class ProductService {
         
         return data;
     }
+
+    async getOneProductById(id) {
+        // endpoint : localhost:3000/products/:id
+        const url = `${this.baseUrl}/${id}`;
+        const { data } = await axios.get(url);
+        return data;
+    }
 }
 
 export default ProductService;

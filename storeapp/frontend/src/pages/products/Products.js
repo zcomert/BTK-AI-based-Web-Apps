@@ -15,6 +15,7 @@ export default function Products() {
             const data = await productService.getAllProducts();
             setProducts(data);
             console.log(products)
+            return;
         };
         fetchData();
     }, []);

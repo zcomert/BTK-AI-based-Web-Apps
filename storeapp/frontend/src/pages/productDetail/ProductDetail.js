@@ -1,17 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { products } from '../products/ProductsData';
 import Comments from './Comments';
 import { Container } from '@mui/material';
 import Header from '../../components/header/Header';
 import NewComment from './NewComment';
+import ProductService from '../../services/ProductService';
 
 export default function ProductDetail() {
 
     const { id } = useParams();
 
     const [selectedProduct, setSelectedProduct] =
-        useState(products.find(p => p.id === parseInt(id)));
+        useState(null);
+
+    useEffect(() => {
+        const productService = new ProductService();
+        productService
+            .getOneProductById(id)
+            .then(resp => setSelectedProduct(resp));
+
+    }, []);
+
+
 
 
     if (!selectedProduct) {
