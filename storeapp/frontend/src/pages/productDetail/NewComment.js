@@ -1,4 +1,4 @@
-import { Button, Input } from '@mui/material';
+import { Button, Input, Stack } from '@mui/material';
 import { useFormik } from 'formik';
 import React, { useState } from 'react'
 import ProductService from '../../services/ProductService';
@@ -18,7 +18,7 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
             [e.target.name]: e.target.value
         });
 
-        console.log(e.target.value);
+        console.log(Math.random());
     }
 
     const handleSubmit = (e) => {
@@ -42,16 +42,16 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
 
 
     return (
-        <div>
+        <Stack spacing={3}>
             <form onSubmit={handleSubmit} >
                 <Input
+                    sx={{ display: 'block' }}
                     value={values?.text}
                     onChange={handleChange}
                     name="text" />
-                <Button variant='contained' type="submit">Gönder</Button>
+                <Button sx={{ mt: 3 }} variant='contained' type="submit">Gönder</Button>
             </form>
-            {JSON.stringify(values)}
-        </div>
+        </Stack>
     )
 }
 
