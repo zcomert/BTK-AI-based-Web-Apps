@@ -1,0 +1,10 @@
+.productcard {}
+
+.productcard img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.productcard img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}

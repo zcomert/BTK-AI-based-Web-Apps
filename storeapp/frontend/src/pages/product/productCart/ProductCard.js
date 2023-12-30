@@ -14,6 +14,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import './productCard.css';
+import { useNavigate } from 'react-router-dom';
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -28,13 +30,18 @@ const ExpandMore = styled((props) => {
 
 export default function ProductCard({ product }) {
     const [expanded, setExpanded] = React.useState(false);
+    const navigate = useNavigate();
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
 
+    const handleClick = (id) => {
+        navigate(`/productdetail/${id}`);
+    }
+
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card className='productcard' sx={{ maxWidth: 345 }}>
             <CardHeader
                 avatar={
                     <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -49,11 +56,11 @@ export default function ProductCard({ product }) {
                 title={product?.name}
                 subheader="September 14, 2016"
             />
-            <CardMedia
+            <CardMedia onClick={() => handleClick(product?.id)}
                 component="img"
                 height="194"
                 image={product?.imageUrl}
-                alt="Paella dish"
+                alt={product?.name}
             />
             <CardContent>
                 <Typography variant="body2" color="text.secondary">

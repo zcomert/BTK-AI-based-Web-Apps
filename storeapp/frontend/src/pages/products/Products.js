@@ -5,7 +5,7 @@ import Header from '../../components/header/Header'
 // import { products } from './ProductsData'
 import AppContext from '../../context/AppContext'
 import { Container, Grid } from '@mui/material';
-import ProductCard from '../product/productCart/ProductCart';
+import ProductCard from '../product/productCart/ProductCard';
 export default function Products() {
 
     const { products } = useContext(AppContext);
