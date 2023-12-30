@@ -1,8 +1,10 @@
 import { Button, Input, Stack, TextField } from '@mui/material';
 import { useFormik } from 'formik';
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import ProductService from '../../services/ProductService';
 import SendIcon from '@mui/icons-material/Send';
+import ProgressBar from '../../components/progressBar/ProgressBar';
+import AppContext from '../../context/AppContext';
 
 function NewComment({ setSelectedProduct, selectedProduct }) {
 
@@ -19,7 +21,7 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
             [e.target.name]: e.target.value
         });
 
-        console.log(Math.random());
+        setProgress(Math.random()*100);
     }
 
     const handleSubmit = (e) => {
@@ -40,25 +42,30 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
         setValues(initialValues);
     }
 
+    const { setProgress } = useContext(AppContext);
+
 
 
     return (
-        <form onSubmit={handleSubmit} >
-            <Stack spacing={3}>
-                <TextField
-                    label="Yorum"
-                    variant='outlined'
-                    value={values?.text}
-                    onChange={handleChange}
-                    multiline
-                    maxRows={3}
-                    name="text" />
-                <Button
-                    startIcon={<SendIcon />}
-                    variant='contained'
-                    type="submit">Gönder</Button>
-            </Stack>
-        </form>
+        <>
+            <ProgressBar />
+            <form onSubmit={handleSubmit} >
+                <Stack spacing={3}>
+                    <TextField
+                        label="Yorum"
+                        variant='outlined'
+                        value={values?.text}
+                        onChange={handleChange}
+                        multiline
+                        maxRows={3}
+                        name="text" />
+                    <Button
+                        startIcon={<SendIcon />}
+                        variant='contained'
+                        type="submit">Gönder</Button>
+                </Stack>
+            </form>
+        </>
     )
 }
 
