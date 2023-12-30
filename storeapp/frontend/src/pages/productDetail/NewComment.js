@@ -5,13 +5,16 @@ import ProductService from '../../services/ProductService';
 
 function NewComment({ setSelectedProduct, selectedProduct }) {
 
+    const handleChange = (e) => {
+        console.log(e.target.value)
+    }
     const formik = useFormik({
         initialValues: {
             id: selectedProduct?.comments.length + 1,
             text: ''
         },
         onSubmit: (values) => {
-            
+
             const productService = new ProductService();
 
             const product = {
@@ -21,13 +24,17 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
                     values
                 ]
             };
-            
+
             productService
                 .updateOneProduct(product.id, product)
                 .then(resp => setSelectedProduct(resp));
-            
-            formik.resetForm();
+
+            formik.resetForm({
+                ...formik.initialValues
+            });
         }
+
+
     })
 
     return (
@@ -39,6 +46,7 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
                     name="text" />
                 <Button variant='contained' type="submit">Gönder</Button>
             </form>
+            {JSON.stringify(formik.values)}
         </div>
     )
 }

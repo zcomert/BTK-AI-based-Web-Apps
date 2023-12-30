@@ -12,6 +12,7 @@ import ResponsiveAppBar from './components/navbar/ResponsiveAppBar';
 import Book from './basic/Book';
 import BookWithFormik from './basic/BookWithFormik';
 import ArrayManipulation from './basic/ArrayManipulation';
+import ContextSample from './basic/ContextSample';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
 
       <main>
         <Routes>
+          <Route path='/context' element={<ContextSample />}></Route>
           <Route path='/array' element={<ArrayManipulation />}></Route>
           <Route path='/bookwithformik' element={<BookWithFormik />}></Route>
           <Route path='/book' element={<Book />}></Route>
