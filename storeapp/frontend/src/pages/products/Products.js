@@ -13,12 +13,12 @@ export default function Products() {
     return (
         <div>
             <Header data={{ title: "Ürünler" }}></Header>
-            <Container>
+            <Container sx={{ mt: 5 }}>
                 <Grid container spacing={3}>
                     {products?.map((prd) => (
-                        <Grid key={prd.id} item xs={4}>
+                        <Grid key={prd.id} item xs={12} sm={6} md={4} lg={3} >
                             {/* <Link to={`/productdetail/${prd?.id}`}>{prd?.name}</Link> */}
-                            <ProductCard />
+                            <ProductCard product={prd} />
                         </Grid>
                     ))}
                 </Grid>
