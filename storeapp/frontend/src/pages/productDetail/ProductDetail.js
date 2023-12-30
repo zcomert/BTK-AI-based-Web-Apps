@@ -5,15 +5,27 @@ import { Container } from '@mui/material';
 import Header from '../../components/header/Header';
 import NewComment from './NewComment';
 import AppContext from '../../context/AppContext';
+import ProductService from '../../services/ProductService';
 
 export default function ProductDetail() {
 
     const { id } = useParams();
-    const { products, setLoad } = useContext(AppContext);
+    const { setLoad } = useContext(AppContext);
 
-    const [selectedProduct, setSelectedProduct] = useState(
-        products.find(p => p.id === parseInt(id))
-    );
+    const [selectedProduct, setSelectedProduct] = useState(null);
+
+    useEffect(() => {
+        setLoad(true);
+        const productService = new ProductService();
+        productService
+            .getOneProductById(id)
+            .then(resp => {
+                setSelectedProduct(resp)
+                setLoad(false);
+            })
+    }, [])
+
+
 
     if (!selectedProduct) {
         return (<div>
