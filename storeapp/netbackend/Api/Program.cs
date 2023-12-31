@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Repositories;
 using Repositories.Contracts;
 
@@ -10,6 +11,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IProductRepository, FakeProductRepository>(); // register
+builder.Services.AddDbContext<RepositoryContext>(options =>
+{
+    options.UseSqlite(builder.Configuration.GetConnectionString("sqliteconnection"),
+    b => b.MigrationsAssembly("Api"));
+}); // register
 
 var app = builder.Build();
 

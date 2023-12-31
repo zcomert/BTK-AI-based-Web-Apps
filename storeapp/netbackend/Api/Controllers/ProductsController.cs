@@ -49,12 +49,12 @@ public class ProductsController : ControllerBase
         return Ok(model); // 200
     }
 
-    [HttpDelete("{id}")] // ./api/products/
+    [HttpDelete("{id}")] // ./api/products/:id
     public IActionResult DeleteOneProduct([FromRoute(Name = "id")] int id)
     {
         var product = _productRepository
             .GetOneProduct(p => p.Id.Equals(id));
-        
+
         if (product is null)
             throw new Exception("Product not found!");
         else
