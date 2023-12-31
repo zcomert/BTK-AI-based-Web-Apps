@@ -9,4 +9,5 @@ public interface IProductRepository
     Product? GetOneProduct(Expression<Func<Product,bool>> filter);
     Product CreateOneProduct(Product product);
     Product UpdateOneProduct(Product product);
+    void DeleteOneProduct(Product product);
 }

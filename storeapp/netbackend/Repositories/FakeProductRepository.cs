@@ -25,6 +25,11 @@ public class FakeProductRepository : IProductRepository
         return product;
     }
 
+    public void DeleteOneProduct(Product product)
+    {
+        _products.Remove(product);
+    }
+
     public IQueryable<Product> GetAllProducts()
     {
         return _products.AsQueryable();
