@@ -18,6 +18,13 @@ public class FakeProductRepository : IProductRepository
                 new Product { Id = 5, Name = "Smartwatch", Price = 300 }
             };
     }
+
+    public Product CreateOneProduct(Product product)
+    {
+        _products.Add(product);
+        return product;
+    }
+
     public IQueryable<Product> GetAllProducts()
     {
         return _products.AsQueryable();

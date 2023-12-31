@@ -11,6 +11,12 @@ public class InMemoryProductRepository : IProductRepository
         new Product { Id = 2, Name = "Smartphone", Price = 800 },
         new Product { Id = 3, Name = "Headphones", Price = 100 },
     };
+
+    public Product CreateOneProduct(Product product)
+    {
+        throw new NotImplementedException();
+    }
+
     public IQueryable<Product> GetAllProducts()
     {
         return _products.AsQueryable();

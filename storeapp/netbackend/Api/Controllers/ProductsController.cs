@@ -28,4 +28,12 @@ public class ProductsController : ControllerBase
             .GetOneProduct(p => p.Id.Equals(id));
         return Ok(model);
     }
+
+    [HttpPost]
+    public IActionResult CreateOneProduct([FromBody] Product product)
+    {
+        _productRepository
+            .CreateOneProduct(product);
+        return Created($"api/products/{product.Id}", product); // 201
+    }
 }
