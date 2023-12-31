@@ -1,4 +1,5 @@
-﻿using Entities.Models;
+﻿using System.Linq.Expressions;
+using Entities.Models;
 using Repositories.Contracts;
 
 namespace Repositories;
@@ -20,5 +21,12 @@ public class FakeProductRepository : IProductRepository
     public IQueryable<Product> GetAllProducts()
     {
         return _products.AsQueryable();
+    }
+
+    public Product? GetOneProduct(Expression<Func<Product, bool>> filter)
+    {
+        return _products
+            .AsQueryable()
+            .SingleOrDefault(filter);
     }
 }

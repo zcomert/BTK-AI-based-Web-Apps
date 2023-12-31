@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Entities.Models;
 using Repositories.Contracts;
 
@@ -13,5 +14,10 @@ public class InMemoryProductRepository : IProductRepository
     public IQueryable<Product> GetAllProducts()
     {
         return _products.AsQueryable();
+    }
+
+    public Product? GetOneProduct(Expression<Func<Product, bool>> filter)
+    {
+        throw new NotImplementedException();
     }
 }

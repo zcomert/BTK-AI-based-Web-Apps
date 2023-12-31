@@ -12,7 +12,7 @@ public class ProductsController : ControllerBase
     private IProductRepository _productRepository;
     public ProductsController()
     {
-        _productRepository = new InMemoryProductRepository();
+        _productRepository = new FakeProductRepository();
     }
     [HttpGet]
     public IActionResult GetAllProducts()
@@ -24,19 +24,8 @@ public class ProductsController : ControllerBase
     [HttpGet("{id}")]
     public IActionResult GetOneProduct(int id)
     {
-        var product = new Product();
-
-        product.Id = 1;
-        product.Name = "HP Computer";
-        product.Price = 30_000;
-
-        var prd = new Product()
-        {
-            Id = 1,
-            Name = "Asus Laptop",
-            Price = 45_000
-        };
-
-        return Ok(prd);
+        var model = _productRepository
+            .GetOneProduct(p => p.Id.Equals(id));
+        return Ok(model);
     }
 }
