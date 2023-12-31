@@ -1,0 +1,12 @@
+D:\btkai\storeapp\netbackend\Repositories\bin\Debug\net8.0\Repositories.deps.json
+D:\btkai\storeapp\netbackend\Repositories\bin\Debug\net8.0\Repositories.dll
+D:\btkai\storeapp\netbackend\Repositories\bin\Debug\net8.0\Repositories.pdb
+D:\btkai\storeapp\netbackend\Repositories\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\btkai\storeapp\netbackend\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+D:\btkai\storeapp\netbackend\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+D:\btkai\storeapp\netbackend\Repositories\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\btkai\storeapp\netbackend\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json
+D:\btkai\storeapp\netbackend\Repositories\obj\Debug\net8.0\Repositories.dll
+D:\btkai\storeapp\netbackend\Repositories\obj\Debug\net8.0\refint\Repositories.dll
+D:\btkai\storeapp\netbackend\Repositories\obj\Debug\net8.0\Repositories.pdb
+D:\btkai\storeapp\netbackend\Repositories\obj\Debug\net8.0\ref\Repositories.dll

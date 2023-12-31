@@ -50,6 +50,18 @@
 * POSTMAN Değişkenleri
 * POSTMAN ile API Testi
 
+## 7. Gün
+* Servis pratikleri
+* State Management
+* Context API
+
+## 8. Gün
+* API, Web API, REST, RESTfull
+* MVC Yazılım Mimari Deseni
+* Controller tanımları
+* Modeller ile çalışma
+
+
 
 # Yapay Zeka 
 1. Problem tanımı ve kapsamı
