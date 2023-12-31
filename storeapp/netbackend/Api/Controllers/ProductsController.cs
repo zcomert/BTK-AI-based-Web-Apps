@@ -1,5 +1,7 @@
 using Entities.Models;
 using Microsoft.AspNetCore.Mvc;
+using Repositories;
+using Repositories.Contracts;
 
 namespace Api.Controllers;
 
@@ -7,20 +9,34 @@ namespace Api.Controllers;
 [Route("api/products")]
 public class ProductsController : ControllerBase
 {
-    [HttpGet]
-    public IActionResult Greetings()
+    private IProductRepository _productRepository;
+    public ProductsController()
     {
-        return Ok("Merhaba ASP.NET Core Web API.");
+        _productRepository = new InMemoryProductRepository();
+    }
+    [HttpGet]
+    public IActionResult GetAllProducts()
+    {
+        var models = _productRepository.GetAllProducts();
+        return Ok(models);
     }
 
     [HttpGet("{id}")]
     public IActionResult GetOneProduct(int id)
     {
         var product = new Product();
-        
+
         product.Id = 1;
         product.Name = "HP Computer";
         product.Price = 30_000;
-        return Ok(product);
+
+        var prd = new Product()
+        {
+            Id = 1,
+            Name = "Asus Laptop",
+            Price = 45_000
+        };
+
+        return Ok(prd);
     }
 }
