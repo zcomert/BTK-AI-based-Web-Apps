@@ -36,4 +36,17 @@ public class FakeProductRepository : IProductRepository
             .AsQueryable()
             .SingleOrDefault(filter);
     }
+
+    public Product UpdateOneProduct(Product product)
+    {
+        var productToUpdate = _products
+            .SingleOrDefault(p => p.Id == product.Id);
+        
+        if (productToUpdate!= null)
+        {
+            productToUpdate.Name = product.Name;
+            productToUpdate.Price = product.Price;
+        }
+        return productToUpdate!;
+    }
 }

@@ -9,11 +9,14 @@ namespace Api.Controllers;
 [Route("api/products")]
 public class ProductsController : ControllerBase
 {
-    private IProductRepository _productRepository;
-    public ProductsController()
+    private readonly IProductRepository _productRepository;
+
+    // Dependency Injection
+    public ProductsController(IProductRepository productRepository) // resolve
     {
-        _productRepository = new FakeProductRepository();
+        _productRepository = productRepository;
     }
+
     [HttpGet]
     public IActionResult GetAllProducts()
     {
@@ -35,5 +38,14 @@ public class ProductsController : ControllerBase
         _productRepository
             .CreateOneProduct(product);
         return Created($"api/products/{product.Id}", product); // 201
+    }
+
+    [HttpPut("{id}")] // ./api/products/id
+    public IActionResult UpdateOneProduct([FromRoute(Name = "id")] int id,
+    [FromBody] Product product)
+    {
+        var model = _productRepository
+          .UpdateOneProduct(product);
+        return Ok(model); // 200
     }
 }
