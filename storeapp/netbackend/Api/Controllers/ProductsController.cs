@@ -1,3 +1,4 @@
+using Entities.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers;
@@ -7,14 +8,19 @@ namespace Api.Controllers;
 public class ProductsController : ControllerBase
 {
     [HttpGet]
-    public String Greetings()
+    public IActionResult Greetings()
     {
-        return "Merhaba ASP.NET Core Web API.";
+        return Ok("Merhaba ASP.NET Core Web API.");
     }
 
-    [HttpGet("{name}")]
-    public String Greetings(string name)
+    [HttpGet("{id}")]
+    public IActionResult GetOneProduct(int id)
     {
-        return $"Merhaba {name}.";
+        var product = new Product();
+        
+        product.Id = 1;
+        product.Name = "HP Computer";
+        product.Price = 30_000;
+        return Ok(product);
     }
 }

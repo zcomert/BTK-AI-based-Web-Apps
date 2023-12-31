@@ -10,3 +10,7 @@ D:\btkai\storeapp\netbackend\Repositories\obj\Debug\net8.0\Repositories.dll
 D:\btkai\storeapp\netbackend\Repositories\obj\Debug\net8.0\refint\Repositories.dll
 D:\btkai\storeapp\netbackend\Repositories\obj\Debug\net8.0\Repositories.pdb
 D:\btkai\storeapp\netbackend\Repositories\obj\Debug\net8.0\ref\Repositories.dll
+D:\btkai\storeapp\netbackend\Repositories\bin\Debug\net8.0\Entities.dll
+D:\btkai\storeapp\netbackend\Repositories\bin\Debug\net8.0\Entities.pdb
+D:\btkai\storeapp\netbackend\Repositories\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+D:\btkai\storeapp\netbackend\Repositories\obj\Debug\net8.0\Repositories.csproj.CopyComplete

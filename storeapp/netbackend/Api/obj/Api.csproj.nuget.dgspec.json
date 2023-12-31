@@ -156,7 +156,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\btkai\\storeapp\\netbackend\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\btkai\\storeapp\\netbackend\\Entities\\Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
