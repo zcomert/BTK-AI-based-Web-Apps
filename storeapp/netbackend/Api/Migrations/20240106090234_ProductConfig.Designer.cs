@@ -11,8 +11,8 @@ using Repositories;
 namespace Api.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20231231140702_Start")]
-    partial class Start
+    [Migration("20240106090234_ProductConfig")]
+    partial class ProductConfig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,6 +27,11 @@ namespace Api.Migrations
 
                     b.Property<DateTime>("AtCreatedDate")
                         .HasColumnType("TEXT");
+
+                    b.Property<string>("ImageURL")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue("/images/default.jpg");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -43,35 +48,40 @@ namespace Api.Migrations
                         new
                         {
                             Id = 1,
-                            AtCreatedDate = new DateTime(2023, 12, 31, 17, 7, 1, 799, DateTimeKind.Local).AddTicks(5123),
+                            AtCreatedDate = new DateTime(2024, 1, 6, 12, 2, 34, 240, DateTimeKind.Local).AddTicks(8165),
+                            ImageURL = "/images/1.jpg",
                             Name = "Laptop",
                             Price = 1500m
                         },
                         new
                         {
                             Id = 2,
-                            AtCreatedDate = new DateTime(2023, 12, 31, 17, 7, 1, 799, DateTimeKind.Local).AddTicks(5138),
+                            AtCreatedDate = new DateTime(2024, 1, 6, 12, 2, 34, 240, DateTimeKind.Local).AddTicks(8177),
+                            ImageURL = "/images/2.jpg",
                             Name = "Smartphone",
                             Price = 800m
                         },
                         new
                         {
                             Id = 3,
-                            AtCreatedDate = new DateTime(2023, 12, 31, 17, 7, 1, 799, DateTimeKind.Local).AddTicks(5140),
+                            AtCreatedDate = new DateTime(2024, 1, 6, 12, 2, 34, 240, DateTimeKind.Local).AddTicks(8179),
+                            ImageURL = "/images/3.jpg",
                             Name = "Headphones",
                             Price = 100m
                         },
                         new
                         {
                             Id = 4,
-                            AtCreatedDate = new DateTime(2023, 12, 31, 17, 7, 1, 799, DateTimeKind.Local).AddTicks(5141),
+                            AtCreatedDate = new DateTime(2024, 1, 6, 12, 2, 34, 240, DateTimeKind.Local).AddTicks(8180),
+                            ImageURL = "/images/4.jpg",
                             Name = "Tablet",
                             Price = 600m
                         },
                         new
                         {
                             Id = 5,
-                            AtCreatedDate = new DateTime(2023, 12, 31, 17, 7, 1, 799, DateTimeKind.Local).AddTicks(5142),
+                            AtCreatedDate = new DateTime(2024, 1, 6, 12, 2, 34, 240, DateTimeKind.Local).AddTicks(8181),
+                            ImageURL = "/images/5.jpg",
                             Name = "Smartwatch",
                             Price = 300m
                         });

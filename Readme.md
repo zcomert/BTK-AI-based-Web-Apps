@@ -106,3 +106,11 @@
     * PUT  
         - Kaynak güncellemek için kullanılır.
 
+# Entity Framework Core CLI
+> dotnet ef database drop
+
+> del Migrations
+
+> dotnet ef database update
+
+> dotnet ef migrations add <MIGRATION_NAME>

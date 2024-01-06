@@ -27,27 +27,27 @@ namespace Api.Migrations
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "AtCreatedDate", "Name", "Price" },
-                values: new object[] { 1, new DateTime(2023, 12, 31, 17, 7, 1, 799, DateTimeKind.Local).AddTicks(5123), "Laptop", 1500m });
+                values: new object[] { 1, new DateTime(2024, 1, 6, 11, 20, 20, 575, DateTimeKind.Local).AddTicks(3782), "Laptop", 1500m });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "AtCreatedDate", "Name", "Price" },
-                values: new object[] { 2, new DateTime(2023, 12, 31, 17, 7, 1, 799, DateTimeKind.Local).AddTicks(5138), "Smartphone", 800m });
+                values: new object[] { 2, new DateTime(2024, 1, 6, 11, 20, 20, 575, DateTimeKind.Local).AddTicks(3809), "Smartphone", 800m });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "AtCreatedDate", "Name", "Price" },
-                values: new object[] { 3, new DateTime(2023, 12, 31, 17, 7, 1, 799, DateTimeKind.Local).AddTicks(5140), "Headphones", 100m });
+                values: new object[] { 3, new DateTime(2024, 1, 6, 11, 20, 20, 575, DateTimeKind.Local).AddTicks(3810), "Headphones", 100m });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "AtCreatedDate", "Name", "Price" },
-                values: new object[] { 4, new DateTime(2023, 12, 31, 17, 7, 1, 799, DateTimeKind.Local).AddTicks(5141), "Tablet", 600m });
+                values: new object[] { 4, new DateTime(2024, 1, 6, 11, 20, 20, 575, DateTimeKind.Local).AddTicks(3811), "Tablet", 600m });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "AtCreatedDate", "Name", "Price" },
-                values: new object[] { 5, new DateTime(2023, 12, 31, 17, 7, 1, 799, DateTimeKind.Local).AddTicks(5142), "Smartwatch", 300m });
+                values: new object[] { 5, new DateTime(2024, 1, 6, 11, 20, 20, 575, DateTimeKind.Local).AddTicks(3812), "Smartwatch", 300m });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

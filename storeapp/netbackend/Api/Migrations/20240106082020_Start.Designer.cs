@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repositories;
 
@@ -10,9 +11,10 @@ using Repositories;
 namespace Api.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20240106082020_Start")]
+    partial class Start
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.0");
@@ -25,11 +27,6 @@ namespace Api.Migrations
 
                     b.Property<DateTime>("AtCreatedDate")
                         .HasColumnType("TEXT");
-
-                    b.Property<string>("ImageURL")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT")
-                        .HasDefaultValue("/images/default.jpg");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -46,40 +43,35 @@ namespace Api.Migrations
                         new
                         {
                             Id = 1,
-                            AtCreatedDate = new DateTime(2024, 1, 6, 12, 2, 34, 240, DateTimeKind.Local).AddTicks(8165),
-                            ImageURL = "/images/1.jpg",
+                            AtCreatedDate = new DateTime(2024, 1, 6, 11, 20, 20, 575, DateTimeKind.Local).AddTicks(3782),
                             Name = "Laptop",
                             Price = 1500m
                         },
                         new
                         {
                             Id = 2,
-                            AtCreatedDate = new DateTime(2024, 1, 6, 12, 2, 34, 240, DateTimeKind.Local).AddTicks(8177),
-                            ImageURL = "/images/2.jpg",
+                            AtCreatedDate = new DateTime(2024, 1, 6, 11, 20, 20, 575, DateTimeKind.Local).AddTicks(3809),
                             Name = "Smartphone",
                             Price = 800m
                         },
                         new
                         {
                             Id = 3,
-                            AtCreatedDate = new DateTime(2024, 1, 6, 12, 2, 34, 240, DateTimeKind.Local).AddTicks(8179),
-                            ImageURL = "/images/3.jpg",
+                            AtCreatedDate = new DateTime(2024, 1, 6, 11, 20, 20, 575, DateTimeKind.Local).AddTicks(3810),
                             Name = "Headphones",
                             Price = 100m
                         },
                         new
                         {
                             Id = 4,
-                            AtCreatedDate = new DateTime(2024, 1, 6, 12, 2, 34, 240, DateTimeKind.Local).AddTicks(8180),
-                            ImageURL = "/images/4.jpg",
+                            AtCreatedDate = new DateTime(2024, 1, 6, 11, 20, 20, 575, DateTimeKind.Local).AddTicks(3811),
                             Name = "Tablet",
                             Price = 600m
                         },
                         new
                         {
                             Id = 5,
-                            AtCreatedDate = new DateTime(2024, 1, 6, 12, 2, 34, 240, DateTimeKind.Local).AddTicks(8181),
-                            ImageURL = "/images/5.jpg",
+                            AtCreatedDate = new DateTime(2024, 1, 6, 11, 20, 20, 575, DateTimeKind.Local).AddTicks(3812),
                             Name = "Smartwatch",
                             Price = 300m
                         });

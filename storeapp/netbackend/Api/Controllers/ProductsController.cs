@@ -41,7 +41,10 @@ public class ProductsController : ControllerBase
         _productRepository
             .CreateOneProduct(product);
 
+       
         return Created($"api/products/{product.Id}", product); // 201
+      
+
     }
 
     [HttpPut("{id}")] // ./api/products/id

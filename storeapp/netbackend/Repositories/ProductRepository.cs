@@ -23,7 +23,8 @@ public class ProductRepository : IProductRepository
 
     public void DeleteOneProduct(Product product)
     {
-        throw new NotImplementedException();
+        _context.Products.Remove(product);
+        _context.SaveChanges();
     }
 
     public IQueryable<Product> GetAllProducts()
