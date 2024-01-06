@@ -5,7 +5,27 @@
       "ProjectGuid": "38970e47-6c27-4155-9b6c-7c8fbc3bce10",
       "DisplayName": "Api",
       "ColorIndex": 0
+    },
+    "7c5c963f-6c8c-442b-a7ab-37db73af463f": {
+      "ProjectGuid": "7c5c963f-6c8c-442b-a7ab-37db73af463f",
+      "DisplayName": "Api",
+      "ColorIndex": 1
+    },
+    "0a699b67-33b3-401e-834d-2462f45ce4eb": {
+      "ProjectGuid": "0a699b67-33b3-401e-834d-2462f45ce4eb",
+      "DisplayName": "Entities",
+      "ColorIndex": 2
+    },
+    "edd4d789-1d31-45d8-a75b-35935a7a0cbc": {
+      "ProjectGuid": "edd4d789-1d31-45d8-a75b-35935a7a0cbc",
+      "DisplayName": "Services",
+      "ColorIndex": 3
+    },
+    "d78e55e5-5bd3-4b44-8652-bdb636af134e": {
+      "ProjectGuid": "d78e55e5-5bd3-4b44-8652-bdb636af134e",
+      "DisplayName": "Repositories",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 5
 }

@@ -60,7 +60,16 @@
 * MVC Yazılım Mimari Deseni
 * Controller tanımları
 * Modeller ile çalışma
+* Entity Framework Core
+* Code First Yaklaşımı
+* Migrations
 
+## 9. Gün
+* Entity Type Configuration
+* Seed Data
+* Entity Relations
+* CORS
+* Extension Methods
 
 
 # Yapay Zeka 
