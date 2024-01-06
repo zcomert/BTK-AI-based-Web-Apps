@@ -1,3 +1,4 @@
+using System.Reflection;
 using Entities.Models;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Config;
@@ -12,10 +13,14 @@ public class RepositoryContext : DbContext
 
     }
     public DbSet<Product> Products { get; set; }
+    public DbSet<Comment> Comments { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.ApplyConfiguration(new ProductConfig());
+        // modelBuilder.ApplyConfiguration(new ProductConfig());
+        // modelBuilder.ApplyConfiguration(new CommentConfig());
+        modelBuilder
+        .ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
 }

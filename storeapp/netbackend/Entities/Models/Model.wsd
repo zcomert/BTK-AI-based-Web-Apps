@@ -24,7 +24,23 @@ class RepositoryContext {
 }
 
 class Product{
+    -comments:List<Comment>
+    +setComments():void
+    +getComments():List<Comment>
+}
 
+class Comment{
+    -commentId:int,
+    -productId:int
+    -text:String
+    --
+    +getCommentId():int
+    +getProductId():int
+    +getText():String
+    --
+    +setCommentId():void
+    +setProductId():void
+    +setText():void
 }
 
 class ProductRepository {
@@ -38,6 +54,7 @@ class ProductRepository {
 
 FakeProductRepository .-up.|> IProductRepository : "implements"
 ProductRepository .-up.|> IProductRepository : "implements"
+Product - Comment
 
 hide empty members
 @enduml

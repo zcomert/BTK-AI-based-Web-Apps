@@ -15,6 +15,8 @@ public class Product
     public String? ImageURL { get; set; }
     public DateTime AtCreatedDate { get; set; }
 
+    public ICollection<Comment>? Comments { get; set; } // Collection navigation property
+
     public Product()
     {
         AtCreatedDate = DateTime.Now;
