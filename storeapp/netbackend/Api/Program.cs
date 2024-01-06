@@ -19,6 +19,7 @@ builder
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IRepositoryManager, RepositoryManager>(); // register
 builder.Services.AddScoped<IProductRepository, ProductRepository>(); // register
 builder.Services.AddScoped<ICommentRepository, CommentRepository>(); // register
 builder.Services.AddDbContext<RepositoryContext>(options =>

@@ -9,15 +9,11 @@ namespace Api.Controllers;
 [Route("api/products")]
 public class ProductsController : ControllerBase
 {
-    private readonly IProductRepository _productRepository;
-    private readonly ICommentRepository _commentRepository;
+    private readonly IRepositoryManager _manager;
 
-    // Dependency Injection
-    public ProductsController(IProductRepository productRepository,
-        ICommentRepository commentRepository) // resolve
+    public ProductsController(IRepositoryManager manager)
     {
-        _productRepository = productRepository;
-        _commentRepository = commentRepository;
+        _manager = manager;
     }
 
     [HttpGet("{id}/comments")]
@@ -29,7 +25,8 @@ public class ProductsController : ControllerBase
         // .SingleOrDefault()
         // .Comments;
 
-        var model = _commentRepository
+        var model = _manager
+        .CommentRepository
         .GetAllCommentsByProductId(id);
 
         return Ok(model);
@@ -38,15 +35,18 @@ public class ProductsController : ControllerBase
     [HttpGet]
     public IActionResult GetAllProducts()
     {
-        var models = _productRepository
+        var models = _manager
+            .ProductRepository
             .GetAllProductsWithDetails();
+
         return Ok(models);
     }
 
     [HttpGet("{id}")]
     public IActionResult GetOneProduct(int id)
     {
-        var model = _productRepository
+        var model = _manager
+            .ProductRepository
             .GetOne(p => p.Id.Equals(id));
         return Ok(model);
     }
@@ -57,7 +57,8 @@ public class ProductsController : ControllerBase
         if (product is null)
             return BadRequest(); // 400
 
-        _productRepository
+        _manager
+            .ProductRepository
             .CreateOne(product);
 
 
@@ -70,7 +71,8 @@ public class ProductsController : ControllerBase
     public IActionResult UpdateOneProduct([FromRoute(Name = "id")] int id,
     [FromBody] Product product)
     {
-        var entity = _productRepository
+        var entity = _manager
+            .ProductRepository
             .GetOne(p => p.Id.Equals(id));
 
         if (entity is null)
@@ -82,8 +84,9 @@ public class ProductsController : ControllerBase
         entity.Name = product.Name;
         entity.Price = product.Price;
 
-        var model = _productRepository
-          .UpdateOne(entity);
+        var model = _manager
+            .ProductRepository
+            .UpdateOne(entity);
 
         return Ok(model); // 200
     }
@@ -91,14 +94,18 @@ public class ProductsController : ControllerBase
     [HttpDelete("{id}")] // ./api/products/:id
     public IActionResult DeleteOneProduct([FromRoute(Name = "id")] int id)
     {
-        var product = _productRepository
+        var product = _manager
+            .ProductRepository
             .GetOne(p => p.Id.Equals(id));
 
         if (product is null)
             throw new Exception("Product not found!");
         else
         {
-            _productRepository.DeleteOne(product);
+            _manager
+                .ProductRepository
+                .DeleteOne(product);
+
             return NoContent(); // 204
         }
     }
