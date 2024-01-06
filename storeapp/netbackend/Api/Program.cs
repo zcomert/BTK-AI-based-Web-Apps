@@ -20,6 +20,7 @@ builder
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IProductRepository, ProductRepository>(); // register
+builder.Services.AddScoped<ICommentRepository, CommentRepository>(); // register
 builder.Services.AddDbContext<RepositoryContext>(options =>
 {
     options.UseSqlite(builder.Configuration.GetConnectionString("sqliteconnection"),

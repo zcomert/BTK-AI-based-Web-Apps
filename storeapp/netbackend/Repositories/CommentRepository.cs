@@ -10,4 +10,11 @@ public sealed class CommentRepository : RepositoryBase<Comment>, ICommentReposit
     {
 
     }
+
+    public IQueryable<Comment>? GetAllCommentsByProductId(int productId)
+    {
+        return _context
+            .Comments
+            .Where(c => c.ProductId.Equals(productId));
+    }
 }
