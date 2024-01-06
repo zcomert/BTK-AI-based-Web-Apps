@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L7GZkW/7qWSrGulPvk2Aj4wvqoCLEbhbZ4p6XutUcE+tJsuQT7bxlfbocoDHITsCXgyRIZmD3/OnnPU/kSQGDA==",
+  "dgSpecHash": "45rwOBVXW6WzyGZFoj6j/VL0enEORDT7pBoiTlJ6xZ4uMUou3bolwinZEOmpURWexgy4M9w7ABGdBVqMchVZdw==",
   "success": true,
-  "projectFilePath": "D:\\btkai\\storeapp\\netbackend\\api\\Api.csproj",
+  "projectFilePath": "D:\\btkai\\storeapp\\netbackend\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zafer\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\zafer\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.0\\microsoft.data.sqlite.core.6.0.0.nupkg.sha512",

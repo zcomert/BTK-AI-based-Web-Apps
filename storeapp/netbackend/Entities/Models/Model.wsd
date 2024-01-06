@@ -1,0 +1,43 @@
+@startuml Model
+title "Product Model"
+
+interface IProductRepository {
+    +GetAllProducts(): IQueryable<Product>
+    +GetOneProduct(filter:Expression):Product
+    +CreateOneProduct(product:Product):Product
+    +UpdateOneProduct(product:Product):Product
+    +DeleteOneProduct(product:Product):void    
+
+}
+
+class FakeProductRepository {
+        -products:List<Product>
+        +GetAllProducts(): IQueryable<Product>
+        +GetOneProduct(filter:Expression):Product
+        +CreateOneProduct(product:Product):Product
+        +UpdateOneProduct(product:Product):Product
+        +DeleteOneProduct(product:Product):void   
+}
+
+class RepositoryContext {
+    
+}
+
+class Product{
+
+}
+
+class ProductRepository {
+    -context:DbContext<RepositoryContext>
+    +GetAllProducts(): IQueryable<Product>
+    +GetOneProduct(filter:Expression):Product
+    +CreateOneProduct(product:Product):Product
+    +UpdateOneProduct(product:Product):Product
+    +DeleteOneProduct(product:Product):void   
+}
+
+FakeProductRepository .-up.|> IProductRepository : "implements"
+ProductRepository .-up.|> IProductRepository : "implements"
+
+hide empty members
+@enduml

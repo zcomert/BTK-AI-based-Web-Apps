@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<IProductRepository, FakeProductRepository>(); // register
+builder.Services.AddScoped<IProductRepository, ProductRepository>(); // register
 builder.Services.AddDbContext<RepositoryContext>(options =>
 {
     options.UseSqlite(builder.Configuration.GetConnectionString("sqliteconnection"),
