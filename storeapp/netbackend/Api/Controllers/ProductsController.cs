@@ -35,8 +35,12 @@ public class ProductsController : ControllerBase
     [HttpPost]
     public IActionResult CreateOneProduct([FromBody] Product product)
     {
+        if (product is null)
+            return BadRequest(); // 400
+
         _productRepository
             .CreateOneProduct(product);
+
         return Created($"api/products/{product.Id}", product); // 201
     }
 
@@ -44,8 +48,21 @@ public class ProductsController : ControllerBase
     public IActionResult UpdateOneProduct([FromRoute(Name = "id")] int id,
     [FromBody] Product product)
     {
+        var entity = _productRepository
+            .GetOneProduct(p => p.Id.Equals(id));
+
+        if (entity is null)
+            return BadRequest(); // 400
+
+        if (!id.Equals(product.Id))
+            throw new Exception("Parameters are not matched.");
+
+        entity.Name = product.Name;
+        entity.Price = product.Price;
+
         var model = _productRepository
-          .UpdateOneProduct(product);
+          .UpdateOneProduct(entity);
+
         return Ok(model); // 200
     }
 
