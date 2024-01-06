@@ -29,7 +29,7 @@ public class ProductsController : ControllerBase
     public IActionResult GetOneProduct(int id)
     {
         var model = _productRepository
-            .GetOneProduct(p => p.Id.Equals(id));
+            .GetOne(p => p.Id.Equals(id));
         return Ok(model);
     }
 
@@ -40,7 +40,7 @@ public class ProductsController : ControllerBase
             return BadRequest(); // 400
 
         _productRepository
-            .CreateOneProduct(product);
+            .CreateOne(product);
 
 
         return Created($"api/products/{product.Id}", product); // 201
@@ -53,7 +53,7 @@ public class ProductsController : ControllerBase
     [FromBody] Product product)
     {
         var entity = _productRepository
-            .GetOneProduct(p => p.Id.Equals(id));
+            .GetOne(p => p.Id.Equals(id));
 
         if (entity is null)
             return BadRequest(); // 400
@@ -65,7 +65,7 @@ public class ProductsController : ControllerBase
         entity.Price = product.Price;
 
         var model = _productRepository
-          .UpdateOneProduct(entity);
+          .UpdateOne(entity);
 
         return Ok(model); // 200
     }
@@ -74,13 +74,13 @@ public class ProductsController : ControllerBase
     public IActionResult DeleteOneProduct([FromRoute(Name = "id")] int id)
     {
         var product = _productRepository
-            .GetOneProduct(p => p.Id.Equals(id));
+            .GetOne(p => p.Id.Equals(id));
 
         if (product is null)
             throw new Exception("Product not found!");
         else
         {
-            _productRepository.DeleteOneProduct(product);
+            _productRepository.DeleteOne(product);
             return NoContent(); // 204
         }
     }

@@ -19,15 +19,30 @@ public class FakeProductRepository : IProductRepository
             };
     }
 
+    public Product? CreateOne(Product entity)
+    {
+        throw new NotImplementedException();
+    }
+
     public Product CreateOneProduct(Product product)
     {
         _products.Add(product);
         return product;
     }
 
+    public void DeleteOne(Product entity)
+    {
+        throw new NotImplementedException();
+    }
+
     public void DeleteOneProduct(Product product)
     {
         _products.Remove(product);
+    }
+
+    public IQueryable<Product> GetAll()
+    {
+        throw new NotImplementedException();
     }
 
     public IQueryable<Product> GetAllProducts()
@@ -40,11 +55,21 @@ public class FakeProductRepository : IProductRepository
         throw new NotImplementedException();
     }
 
+    public Product? GetOne(Expression<Func<Product, bool>> filter)
+    {
+        throw new NotImplementedException();
+    }
+
     public Product? GetOneProduct(Expression<Func<Product, bool>> filter)
     {
         return _products
             .AsQueryable()
             .SingleOrDefault(filter);
+    }
+
+    public Product? UpdateOne(Product entity)
+    {
+        throw new NotImplementedException();
     }
 
     public Product UpdateOneProduct(Product product)
