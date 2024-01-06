@@ -35,6 +35,11 @@ public class FakeProductRepository : IProductRepository
         return _products.AsQueryable();
     }
 
+    public IQueryable<Product> GetAllProductsWithDetails()
+    {
+        throw new NotImplementedException();
+    }
+
     public Product? GetOneProduct(Expression<Func<Product, bool>> filter)
     {
         return _products

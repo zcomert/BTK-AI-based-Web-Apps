@@ -1,5 +1,6 @@
 using System.Linq.Expressions;
 using Entities.Models;
+using Microsoft.EntityFrameworkCore;
 using Repositories.Contracts;
 
 namespace Repositories;
@@ -30,6 +31,13 @@ public class ProductRepository : IProductRepository
     public IQueryable<Product> GetAllProducts()
     {
         return _context.Products;
+    }
+
+    public IQueryable<Product> GetAllProductsWithDetails()
+    {
+        return _context
+            .Products
+            .Include(p => p.Comments);
     }
 
     public Product? GetOneProduct(Expression<Func<Product, bool>> filter)

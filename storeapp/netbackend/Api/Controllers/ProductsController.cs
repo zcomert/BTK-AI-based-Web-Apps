@@ -20,7 +20,8 @@ public class ProductsController : ControllerBase
     [HttpGet]
     public IActionResult GetAllProducts()
     {
-        var models = _productRepository.GetAllProducts();
+        var models = _productRepository
+            .GetAllProductsWithDetails();
         return Ok(models);
     }
 
@@ -41,9 +42,9 @@ public class ProductsController : ControllerBase
         _productRepository
             .CreateOneProduct(product);
 
-       
+
         return Created($"api/products/{product.Id}", product); // 201
-      
+
 
     }
 

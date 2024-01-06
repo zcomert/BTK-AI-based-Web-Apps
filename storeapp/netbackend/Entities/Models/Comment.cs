@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Entities.Models;
 
@@ -11,6 +12,8 @@ public class Comment
 
     [Required(ErrorMessage = "ProductId is required.")]
     public int ProductId { get; set; }
+    
+    [JsonIgnore]
     public Product? Product { get; set; } // Navigation
     public DateTime AtCreatedDate { get; set; }
 
