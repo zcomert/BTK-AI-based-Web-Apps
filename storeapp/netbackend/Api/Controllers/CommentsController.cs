@@ -7,23 +7,24 @@ namespace Api.Controllers;
 [Route("api/comments")]
 public class CommentsController : ControllerBase
 {
-    private readonly ICommentRepository _commentRepository;
+    private readonly IRepositoryManager _manager;
 
-    public CommentsController(ICommentRepository commentRepository)
+    public CommentsController(IRepositoryManager manager)
     {
-        _commentRepository = commentRepository;
+        _manager = manager;
     }
+
     [HttpGet]
     public IActionResult GetAllComments()
     {
-        var model = _commentRepository.GetAll();
+        var model = _manager.CommentRepository.GetAll();
         return Ok(model);
     }
 
     [HttpGet("{id}")] // api/comments/:id
     public IActionResult GetOneComment([FromRoute(Name = "id")] int id)
     {
-        var model = _commentRepository
+        var model = _manager.CommentRepository
                 .GetOne(c => c.CommentId.Equals(id));
         return Ok(model);
     }
@@ -31,7 +32,8 @@ public class CommentsController : ControllerBase
     [HttpGet("product/{id}")]
     public IActionResult GetAllCommentsByProductId([FromRoute(Name = "id")] int id)
     {
-        var model = _commentRepository.GetAllCommentsByProductId(id);
+        var model = _manager
+        .CommentRepository.GetAllCommentsByProductId(id);
         return Ok(model);
     }
 }
