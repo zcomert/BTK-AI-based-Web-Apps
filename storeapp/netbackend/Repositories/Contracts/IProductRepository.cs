@@ -3,12 +3,7 @@ using Entities.Models;
 
 namespace Repositories.Contracts;
 
-public interface IProductRepository
+public interface IProductRepository : IRepositoryBase<Product>
 {
-    IQueryable<Product> GetAllProducts();
     IQueryable<Product> GetAllProductsWithDetails();
-    Product? GetOneProduct(Expression<Func<Product,bool>> filter);
-    Product CreateOneProduct(Product product);
-    Product UpdateOneProduct(Product product);
-    void DeleteOneProduct(Product product);
 }
