@@ -10,11 +10,29 @@ namespace Api.Controllers;
 public class ProductsController : ControllerBase
 {
     private readonly IProductRepository _productRepository;
+    private readonly ICommentRepository _commentRepository;
 
     // Dependency Injection
-    public ProductsController(IProductRepository productRepository) // resolve
+    public ProductsController(IProductRepository productRepository,
+        ICommentRepository commentRepository) // resolve
     {
         _productRepository = productRepository;
+        _commentRepository = commentRepository;
+    }
+
+    [HttpGet("{id}/comments")]
+    public IActionResult GetComments([FromRoute(Name = "id")] int id)
+    {
+        // var model = _productRepository
+        // .GetAllProductsWithDetails()
+        // .Where(p => p.Id.Equals(id))
+        // .SingleOrDefault()
+        // .Comments;
+
+        var model = _commentRepository
+        .GetAllCommentsByProductId(id);
+
+        return Ok(model);
     }
 
     [HttpGet]

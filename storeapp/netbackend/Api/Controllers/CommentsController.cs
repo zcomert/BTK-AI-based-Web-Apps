@@ -28,9 +28,10 @@ public class CommentsController : ControllerBase
         return Ok(model);
     }
 
-    [HttpGet("products/{id}")]
-    public IActionResult GetAllCommentsByProductId([FromRoute(Name="id")] int id)
+    [HttpGet("product/{id}")]
+    public IActionResult GetAllCommentsByProductId([FromRoute(Name = "id")] int id)
     {
-        return Ok();
+        var model = _commentRepository.GetAllCommentsByProductId(id);
+        return Ok(model);
     }
 }
