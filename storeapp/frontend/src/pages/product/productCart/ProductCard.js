@@ -59,7 +59,7 @@ export default function ProductCard({ product }) {
             <CardMedia onClick={() => handleClick(product?.id)}
                 component="img"
                 height="194"
-                image={product?.imageUrl}
+                image={product?.imageURL}
                 alt={product?.name}
             />
             <CardContent>

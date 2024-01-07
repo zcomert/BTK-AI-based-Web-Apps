@@ -11,8 +11,8 @@ using Repositories;
 namespace Api.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20240106111051_Comments")]
-    partial class Comments
+    [Migration("20240107142517_Start")]
+    partial class Start
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,21 +45,21 @@ namespace Api.Migrations
                         new
                         {
                             CommentId = 1,
-                            AtCreatedDate = new DateTime(2024, 1, 6, 14, 10, 50, 978, DateTimeKind.Local).AddTicks(2143),
+                            AtCreatedDate = new DateTime(2024, 1, 7, 17, 25, 17, 318, DateTimeKind.Local).AddTicks(1324),
                             ProductId = 1,
                             Text = "Harika bir ürün."
                         },
                         new
                         {
                             CommentId = 2,
-                            AtCreatedDate = new DateTime(2024, 1, 6, 14, 10, 50, 978, DateTimeKind.Local).AddTicks(2157),
+                            AtCreatedDate = new DateTime(2024, 1, 7, 17, 25, 17, 318, DateTimeKind.Local).AddTicks(1336),
                             ProductId = 1,
                             Text = "Harika bir ürün, kesinlikle tavsiye ediyorum."
                         },
                         new
                         {
                             CommentId = 3,
-                            AtCreatedDate = new DateTime(2024, 1, 6, 14, 10, 50, 978, DateTimeKind.Local).AddTicks(2158),
+                            AtCreatedDate = new DateTime(2024, 1, 7, 17, 25, 17, 318, DateTimeKind.Local).AddTicks(1337),
                             ProductId = 1,
                             Text = "Kargo biraz gecikti ama beklediğime değdi. Teşekkürler"
                         });
@@ -94,7 +94,7 @@ namespace Api.Migrations
                         new
                         {
                             Id = 1,
-                            AtCreatedDate = new DateTime(2024, 1, 6, 14, 10, 50, 978, DateTimeKind.Local).AddTicks(4977),
+                            AtCreatedDate = new DateTime(2024, 1, 7, 17, 25, 17, 318, DateTimeKind.Local).AddTicks(2187),
                             ImageURL = "/images/1.jpg",
                             Name = "Laptop",
                             Price = 1500m
@@ -102,7 +102,7 @@ namespace Api.Migrations
                         new
                         {
                             Id = 2,
-                            AtCreatedDate = new DateTime(2024, 1, 6, 14, 10, 50, 978, DateTimeKind.Local).AddTicks(4988),
+                            AtCreatedDate = new DateTime(2024, 1, 7, 17, 25, 17, 318, DateTimeKind.Local).AddTicks(2192),
                             ImageURL = "/images/2.jpg",
                             Name = "Smartphone",
                             Price = 800m
@@ -110,7 +110,7 @@ namespace Api.Migrations
                         new
                         {
                             Id = 3,
-                            AtCreatedDate = new DateTime(2024, 1, 6, 14, 10, 50, 978, DateTimeKind.Local).AddTicks(4990),
+                            AtCreatedDate = new DateTime(2024, 1, 7, 17, 25, 17, 318, DateTimeKind.Local).AddTicks(2194),
                             ImageURL = "/images/3.jpg",
                             Name = "Headphones",
                             Price = 100m
@@ -118,7 +118,7 @@ namespace Api.Migrations
                         new
                         {
                             Id = 4,
-                            AtCreatedDate = new DateTime(2024, 1, 6, 14, 10, 50, 978, DateTimeKind.Local).AddTicks(4991),
+                            AtCreatedDate = new DateTime(2024, 1, 7, 17, 25, 17, 318, DateTimeKind.Local).AddTicks(2195),
                             ImageURL = "/images/4.jpg",
                             Name = "Tablet",
                             Price = 600m
@@ -126,7 +126,7 @@ namespace Api.Migrations
                         new
                         {
                             Id = 5,
-                            AtCreatedDate = new DateTime(2024, 1, 6, 14, 10, 50, 978, DateTimeKind.Local).AddTicks(4992),
+                            AtCreatedDate = new DateTime(2024, 1, 7, 17, 25, 17, 318, DateTimeKind.Local).AddTicks(2195),
                             ImageURL = "/images/5.jpg",
                             Name = "Smartwatch",
                             Price = 300m
