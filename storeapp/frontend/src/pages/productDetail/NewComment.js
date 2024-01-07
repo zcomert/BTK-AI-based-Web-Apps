@@ -35,10 +35,24 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
             ]
         };
 
-        productService
-            .updateOneProduct(product.id, product)
+        // productService
+        //     .updateOneProduct(product.id, product)
+        //     .then(resp => {
+        //         setSelectedProduct(resp)
+        //         setSnackbar({
+        //             open: true,
+        //             message: "Yorum başarılı bir şekilde eklendi.",
+        //             severity: "success"
+        //         });
+        //     });
+
+        productService.addOneComment(selectedProduct.id, values.text)
             .then(resp => {
-                setSelectedProduct(resp)
+                setSelectedProduct({
+                    ...selectedProduct,
+                    comments: [...resp]
+                })
+
                 setSnackbar({
                     open: true,
                     message: "Yorum başarılı bir şekilde eklendi.",
