@@ -9,4 +9,5 @@ public interface IProductService
     Product? CreateOneProduct(Product product);
     Product? UpdateOneProduct(int id, Product product);
     void DeleteOneProduct(int id);
+    IEnumerable<Comment> AddOneCommentByProductId(int productId, string text);
 }

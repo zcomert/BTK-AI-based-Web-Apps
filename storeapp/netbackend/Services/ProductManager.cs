@@ -13,6 +13,24 @@ public class ProductManager : IProductService
         _manager = manager;
     }
 
+    public IEnumerable<Comment> AddOneCommentByProductId(int productId, string text)
+    {
+        var product = GetOneProduct(productId);
+        
+        var comment = new Comment()
+        {
+            Text = text,
+            ProductId = productId,
+        };
+        
+        _manager.CommentRepository.CreateOne(comment);
+        _manager.Save();
+
+        return _manager
+            .CommentRepository
+            .GetAllCommentsByProductId(productId)!;
+    }
+
     public Product? CreateOneProduct(Product product)
     {
         if(product is null)
@@ -32,7 +50,9 @@ public class ProductManager : IProductService
 
     public IEnumerable<Product> GetAllProductsWithDetails()
     {
-        throw new NotImplementedException();
+        return _manager
+            .ProductRepository
+            .GetAllProductsWithDetails();
     }
 
     public Product? GetOneProduct(int id)
@@ -49,6 +69,14 @@ public class ProductManager : IProductService
 
     public Product? UpdateOneProduct(int id, Product product)
     {
-        throw new NotImplementedException();
+        var entity = GetOneProduct(id);
+        entity!.Name = product.Name;
+        entity!.Price = product.Price;
+        entity!.Comments = product.Comments;
+        
+        _manager.ProductRepository.UpdateOne(entity);
+        _manager.Save();
+        
+        return entity;
     }
 }
