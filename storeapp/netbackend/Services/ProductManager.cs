@@ -25,7 +25,9 @@ public class ProductManager : IProductService
 
     public void DeleteOneProduct(int id)
     {
-        throw new NotImplementedException();
+        var entity = GetOneProduct(id);
+        _manager.ProductRepository.DeleteOne(entity!);
+        _manager.Save();
     }
 
     public IEnumerable<Product> GetAllProductsWithDetails()
