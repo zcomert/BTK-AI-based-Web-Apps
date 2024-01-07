@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Repositories;
 using Repositories.Contracts;
 using Services;
@@ -7,11 +8,18 @@ namespace Api.Infrastructure.Extensions;
 
 public static class ServiceExtensions
 {
-    public static void ConfigureRepositories(this IServiceCollection services)
+    public static void ConfigureRepositories(this IServiceCollection services, IConfiguration configuration)
     {
+
         services.AddScoped<IRepositoryManager, RepositoryManager>();
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<ICommentRepository, CommentRepository>();
+
+        services.AddDbContext<RepositoryContext>(options =>
+        {
+            options.UseSqlite(configuration.GetConnectionString("sqliteconnection"),
+            b => b.MigrationsAssembly("Api"));
+        }); // register
     }
     public static void ConfigureServices(this IServiceCollection services)
     {

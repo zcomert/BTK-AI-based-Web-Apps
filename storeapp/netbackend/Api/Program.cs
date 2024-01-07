@@ -21,14 +21,10 @@ builder
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.ConfigureRepositories();
+builder.Services.ConfigureRepositories(builder.Configuration);
 builder.Services.ConfigureServices();
 
-builder.Services.AddDbContext<RepositoryContext>(options =>
-{
-    options.UseSqlite(builder.Configuration.GetConnectionString("sqliteconnection"),
-    b => b.MigrationsAssembly("Api"));
-}); // register
+
 
 var app = builder.Build();
 
