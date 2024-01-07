@@ -85,7 +85,11 @@ public class ProductsController : ControllerBase
         _manager
             .ProductService
             .AddOneCommentByProductId(id, comment.Text);
-        
-        return Ok(comment.Text);
+
+        return Ok(new
+        {
+            Id = id,
+            Text = comment.Text
+        }); // 201 döneeceğiz! Düzenleyeceğiz! 
     }
 }
