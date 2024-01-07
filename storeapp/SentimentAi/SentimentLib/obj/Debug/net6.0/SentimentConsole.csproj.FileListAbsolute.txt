@@ -32,3 +32,17 @@ D:\btkai\storeapp\mlnet\Sentiment\SentimentConsole\obj\Debug\net6.0\SentimentCon
 D:\btkai\storeapp\mlnet\Sentiment\SentimentConsole\obj\Debug\net6.0\ref\SentimentConsole.dll
 D:\btkai\storeapp\mlnet\Sentiment\SentimentConsole\obj\Debug\net6.0\SentimentConsole.pdb
 D:\btkai\storeapp\mlnet\Sentiment\SentimentConsole\obj\Debug\net6.0\SentimentConsole.genruntimeconfig.cache
+D:\btkai\storeapp\SentimentAi\SentimentLib\bin\Debug\net6.0\SentimentModel.zip
+D:\btkai\storeapp\SentimentAi\SentimentLib\bin\Debug\net6.0\SentimentConsole.deps.json
+D:\btkai\storeapp\SentimentAi\SentimentLib\bin\Debug\net6.0\SentimentConsole.dll
+D:\btkai\storeapp\SentimentAi\SentimentLib\bin\Debug\net6.0\SentimentConsole.pdb
+D:\btkai\storeapp\SentimentAi\SentimentLib\obj\Debug\net6.0\SentimentConsole.csproj.AssemblyReference.cache
+D:\btkai\storeapp\SentimentAi\SentimentLib\obj\Debug\net6.0\SentimentConsole.GeneratedMSBuildEditorConfig.editorconfig
+D:\btkai\storeapp\SentimentAi\SentimentLib\obj\Debug\net6.0\SentimentConsole.AssemblyInfoInputs.cache
+D:\btkai\storeapp\SentimentAi\SentimentLib\obj\Debug\net6.0\SentimentConsole.AssemblyInfo.cs
+D:\btkai\storeapp\SentimentAi\SentimentLib\obj\Debug\net6.0\SentimentConsole.csproj.CoreCompileInputs.cache
+D:\btkai\storeapp\SentimentAi\SentimentLib\obj\Debug\net6.0\SentimentConsole.sourcelink.json
+D:\btkai\storeapp\SentimentAi\SentimentLib\obj\Debug\net6.0\SentimentConsole.dll
+D:\btkai\storeapp\SentimentAi\SentimentLib\obj\Debug\net6.0\refint\SentimentConsole.dll
+D:\btkai\storeapp\SentimentAi\SentimentLib\obj\Debug\net6.0\SentimentConsole.pdb
+D:\btkai\storeapp\SentimentAi\SentimentLib\obj\Debug\net6.0\ref\SentimentConsole.dll

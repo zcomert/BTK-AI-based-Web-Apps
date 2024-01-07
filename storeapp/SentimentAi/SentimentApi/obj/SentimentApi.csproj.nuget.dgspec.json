@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\btkai\\storeapp\\netbackend\\SentimentApi\\SentimentApi.csproj": {}
+    "D:\\btkai\\storeapp\\SentimentAi\\SentimentApi\\SentimentApi.csproj": {}
   },
   "projects": {
-    "D:\\btkai\\storeapp\\netbackend\\SentimentApi\\SentimentApi.csproj": {
+    "D:\\btkai\\storeapp\\SentimentAi\\SentimentApi\\SentimentApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\btkai\\storeapp\\netbackend\\SentimentApi\\SentimentApi.csproj",
+        "projectUniqueName": "D:\\btkai\\storeapp\\SentimentAi\\SentimentApi\\SentimentApi.csproj",
         "projectName": "SentimentApi",
-        "projectPath": "D:\\btkai\\storeapp\\netbackend\\SentimentApi\\SentimentApi.csproj",
+        "projectPath": "D:\\btkai\\storeapp\\SentimentAi\\SentimentApi\\SentimentApi.csproj",
         "packagesPath": "C:\\Users\\zafer\\.nuget\\packages\\",
-        "outputPath": "D:\\btkai\\storeapp\\netbackend\\SentimentApi\\obj\\",
+        "outputPath": "D:\\btkai\\storeapp\\SentimentAi\\SentimentApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\zafer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,7 +27,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\btkai\\storeapp\\SentimentAi\\SentimentLib\\SentimentConsole.csproj": {
+                "projectPath": "D:\\btkai\\storeapp\\SentimentAi\\SentimentLib\\SentimentConsole.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -60,6 +64,67 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\btkai\\storeapp\\SentimentAi\\SentimentLib\\SentimentConsole.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\btkai\\storeapp\\SentimentAi\\SentimentLib\\SentimentConsole.csproj",
+        "projectName": "SentimentConsole",
+        "projectPath": "D:\\btkai\\storeapp\\SentimentAi\\SentimentLib\\SentimentConsole.csproj",
+        "packagesPath": "C:\\Users\\zafer\\.nuget\\packages\\",
+        "outputPath": "D:\\btkai\\storeapp\\SentimentAi\\SentimentLib\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\zafer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

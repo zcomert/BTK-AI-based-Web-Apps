@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Lp0U5bUJHqaKXqNUtT+lItr2BiTTA2GGT//HyiF8gF3mCMlJXM/IAiJElet89rQPlU48BnBzU/5amLX18ehHoQ==",
+  "dgSpecHash": "YV9A7xh8py+dIZLxlEyOAtjk1rzScrRGUSBZXVzpRjeB510fkk9L9AYZr/eB4AVPaNYIWVrfFm87p52H5dzMyg==",
   "success": true,
-  "projectFilePath": "D:\\btkai\\storeapp\\netbackend\\Sentiment\\SentimentConsole.csproj",
+  "projectFilePath": "D:\\btkai\\storeapp\\SentimentAi\\SentimentLib\\SentimentConsole.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zafer\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\zafer\\.nuget\\packages\\microsoft.ml\\1.6.0\\microsoft.ml.1.6.0.nupkg.sha512",

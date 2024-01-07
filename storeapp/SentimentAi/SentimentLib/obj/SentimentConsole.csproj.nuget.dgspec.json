@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\btkai\\storeapp\\netbackend\\Sentiment\\SentimentConsole.csproj": {}
+    "D:\\btkai\\storeapp\\SentimentAi\\SentimentLib\\SentimentConsole.csproj": {}
   },
   "projects": {
-    "D:\\btkai\\storeapp\\netbackend\\Sentiment\\SentimentConsole.csproj": {
+    "D:\\btkai\\storeapp\\SentimentAi\\SentimentLib\\SentimentConsole.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\btkai\\storeapp\\netbackend\\Sentiment\\SentimentConsole.csproj",
+        "projectUniqueName": "D:\\btkai\\storeapp\\SentimentAi\\SentimentLib\\SentimentConsole.csproj",
         "projectName": "SentimentConsole",
-        "projectPath": "D:\\btkai\\storeapp\\netbackend\\Sentiment\\SentimentConsole.csproj",
+        "projectPath": "D:\\btkai\\storeapp\\SentimentAi\\SentimentLib\\SentimentConsole.csproj",
         "packagesPath": "C:\\Users\\zafer\\.nuget\\packages\\",
-        "outputPath": "D:\\btkai\\storeapp\\netbackend\\Sentiment\\obj\\",
+        "outputPath": "D:\\btkai\\storeapp\\SentimentAi\\SentimentLib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\zafer\\AppData\\Roaming\\NuGet\\NuGet.Config",
