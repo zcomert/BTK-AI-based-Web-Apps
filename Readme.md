@@ -68,9 +68,16 @@
 * Entity Type Configuration
 * Seed Data
 * Entity Relations
+* Repository Manager
+
+## 10. Gün
+* Services
+* Service Manager
 * CORS
 * Extension Methods
-
+* Global Error Handling
+* Machine Learning .NET
+* Sentiment Analysis
 
 # Yapay Zeka 
 1. Problem tanımı ve kapsamı
