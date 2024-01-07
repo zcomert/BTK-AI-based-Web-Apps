@@ -45,7 +45,7 @@ export default function ProductDetail() {
                     {selectedProduct?.name}
                 </h1>
 
-                <img src={selectedProduct?.imageUrl}
+                <img src={selectedProduct?.imageURL}
                     alt={selectedProduct?.name}
                 />
                 <p>
