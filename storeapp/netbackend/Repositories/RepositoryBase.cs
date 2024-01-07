@@ -16,14 +16,14 @@ public abstract class RepositoryBase<T> : IRepositoryBase<T>
     public T? CreateOne(T entity)
     {
         _context.Set<T>().Add(entity);
-        _context.SaveChanges();
+        // _context.SaveChanges();
         return entity;
     }
 
     public void DeleteOne(T entity)
     {
         _context.Set<T>().Remove(entity);
-        _context.SaveChanges();
+        // _context.SaveChanges();
     }
 
     public IQueryable<T> GetAll()
@@ -41,7 +41,7 @@ public abstract class RepositoryBase<T> : IRepositoryBase<T>
     public T? UpdateOne(T entity)
     {
         _context.Set<T>().Update(entity);
-        _context.SaveChanges();
+        // _context.SaveChanges();
         return entity;
     }
 }

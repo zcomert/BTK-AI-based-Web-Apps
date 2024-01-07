@@ -15,7 +15,12 @@ public class ProductManager : IProductService
 
     public Product? CreateOneProduct(Product product)
     {
-        throw new NotImplementedException();
+        if(product is null)
+            throw new ArgumentNullException("product");
+        
+        _manager.ProductRepository.CreateOne(product);
+        _manager.Save();
+        return product;
     }
 
     public void DeleteOneProduct(int id)
@@ -30,7 +35,14 @@ public class ProductManager : IProductService
 
     public Product? GetOneProduct(int id)
     {
-        throw new NotImplementedException();
+        var entity = _manager
+            .ProductRepository
+            .GetOne(p => p.Id.Equals(id));
+
+        if (entity is null)
+            throw new Exception($"Product with id {id} not found.");
+
+        return entity;
     }
 
     public Product? UpdateOneProduct(int id, Product product)
