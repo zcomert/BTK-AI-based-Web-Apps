@@ -2,7 +2,10 @@ import axios from "axios";
 
 class ProductService {
     constructor() {
-        this.baseUrl = 'http://localhost:3000/products';
+        this.test = `${process.env.REACT_APP_DOTNETBACKEND}`;
+        console.log("testurl", this.test);
+
+        this.baseUrl = 'http://localhost:5265/api/products';
     }
 
     async getAllProducts() {

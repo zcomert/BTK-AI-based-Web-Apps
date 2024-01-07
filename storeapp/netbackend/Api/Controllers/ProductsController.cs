@@ -86,6 +86,6 @@ public class ProductsController : ControllerBase
             .ProductService
             .AddOneCommentByProductId(id, comment.Text);
 
-        return Created($"api/products/{id}/comments", comments); // 201 döneeceğiz! Düzenleyeceğiz! 
+        return Created($"api/products/{id}/comments", comments!);
     }
 }
