@@ -82,14 +82,10 @@ public class ProductsController : ControllerBase
     public IActionResult AddOneCommentByProductId([FromRoute(Name = "id")] int id,
         [FromBody] Comment comment)
     {
-        _manager
+        var comments = _manager
             .ProductService
             .AddOneCommentByProductId(id, comment.Text);
 
-        return Ok(new
-        {
-            Id = id,
-            Text = comment.Text
-        }); // 201 döneeceğiz! Düzenleyeceğiz! 
+        return Created($"api/products/{id}/comments", comments); // 201 döneeceğiz! Düzenleyeceğiz! 
     }
 }

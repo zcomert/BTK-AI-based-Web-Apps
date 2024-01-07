@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\btkai\\storeapp\\netbackend\\api\\Api.csproj": {}
+    "D:\\btkai\\storeapp\\netbackend\\Api\\Api.csproj": {}
   },
   "projects": {
-    "D:\\btkai\\storeapp\\netbackend\\api\\Api.csproj": {
+    "D:\\btkai\\storeapp\\netbackend\\Api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\btkai\\storeapp\\netbackend\\api\\Api.csproj",
+        "projectUniqueName": "D:\\btkai\\storeapp\\netbackend\\Api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "D:\\btkai\\storeapp\\netbackend\\api\\Api.csproj",
+        "projectPath": "D:\\btkai\\storeapp\\netbackend\\Api\\Api.csproj",
         "packagesPath": "C:\\Users\\zafer\\.nuget\\packages\\",
-        "outputPath": "D:\\btkai\\storeapp\\netbackend\\api\\obj\\",
+        "outputPath": "D:\\btkai\\storeapp\\netbackend\\Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\zafer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -67,8 +67,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -80,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.125\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -125,8 +124,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -135,7 +133,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.125\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -200,8 +198,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -210,7 +207,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.125\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -262,8 +259,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -272,7 +268,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.125\\RuntimeIdentifierGraph.json"
         }
       }
     }
