@@ -13,7 +13,7 @@ builder
     .AddControllers()
     .AddJsonOptions(options =>
     {
-        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;        
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
     });
 
 
@@ -23,8 +23,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.ConfigureRepositories(builder.Configuration);
 builder.Services.ConfigureServices();
-
-
+builder.Services.ConfigureCors();
 
 var app = builder.Build();
 
@@ -34,7 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("Default");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
