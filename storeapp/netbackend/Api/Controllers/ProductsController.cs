@@ -77,4 +77,15 @@ public class ProductsController : ControllerBase
 
         return NoContent(); // 204
     }
+
+    [HttpPost("{id}/comments")]
+    public IActionResult AddOneCommentByProductId([FromRoute(Name = "id")] int id,
+        [FromBody] Comment comment)
+    {
+        _manager
+            .ProductService
+            .AddOneCommentByProductId(id, comment.Text);
+        
+        return Ok(comment.Text);
+    }
 }

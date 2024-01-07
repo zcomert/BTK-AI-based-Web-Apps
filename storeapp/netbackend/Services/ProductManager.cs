@@ -17,6 +17,9 @@ public class ProductManager : IProductService
     {
         var product = GetOneProductByProductId(productId);
 
+        if (string.IsNullOrWhiteSpace(text))
+            throw new ArgumentException("text");
+
         var comment = new Comment()
         {
             Text = text,
