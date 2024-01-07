@@ -22,7 +22,8 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
         sentimentService
             .makePredict(e.target.value)
             .then(resp => {
-                console.log(resp);
+                setProgress(resp.probability * 100);
+                // console.log(resp);
             })
 
         setValues({
@@ -30,7 +31,6 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
             [e.target.name]: e.target.value
         });
 
-        setProgress(Math.random() * 100);
     }
 
     const handleSubmit = (e) => {
@@ -44,6 +44,37 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
             ]
         };
 
+
+        const sentimentService = new SentimentService();
+        sentimentService
+            .makePredict(values.text)
+            .then(resp => {
+                setProgress(resp.probability * 100);
+                console.log(resp)
+                if (resp.prediction) {
+                    productService.addOneComment(selectedProduct.id, values.text)
+                        .then(resp => {
+                            setSelectedProduct({
+                                ...selectedProduct,
+                                comments: [...resp]
+                            })
+
+                            setSnackbar({
+                                open: true,
+                                message: "Yorum başarılı bir şekilde eklendi.",
+                                severity: "success"
+                            });
+                        });
+                }
+                else {
+                    setSnackbar({
+                        open: true,
+                        message: "Olumsuz yorum eklemiyoruz.",
+                        severity: "error"
+                    });
+                }
+            })
+
         // productService
         //     .updateOneProduct(product.id, product)
         //     .then(resp => {
@@ -55,19 +86,7 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
         //         });
         //     });
 
-        productService.addOneComment(selectedProduct.id, values.text)
-            .then(resp => {
-                setSelectedProduct({
-                    ...selectedProduct,
-                    comments: [...resp]
-                })
 
-                setSnackbar({
-                    open: true,
-                    message: "Yorum başarılı bir şekilde eklendi.",
-                    severity: "success"
-                });
-            });
 
         setValues(initialValues);
     }
