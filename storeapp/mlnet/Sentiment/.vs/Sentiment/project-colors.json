@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "911ae510-20ed-4960-9e40-feaf03d239a3": {
+      "ProjectGuid": "911ae510-20ed-4960-9e40-feaf03d239a3",
+      "DisplayName": "ConsoleApp",
+      "ColorIndex": 0
+    },
+    "2f38f228-ef37-4c82-b9b6-c75bfb725708": {
+      "ProjectGuid": "2f38f228-ef37-4c82-b9b6-c75bfb725708",
+      "DisplayName": "SentimentConsole",
+      "ColorIndex": 1
+    },
+    "3342b967-b731-4bc7-9b2c-655a038606a7": {
+      "ProjectGuid": "3342b967-b731-4bc7-9b2c-655a038606a7",
+      "DisplayName": "SentimentApi",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
