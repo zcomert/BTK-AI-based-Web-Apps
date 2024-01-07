@@ -15,14 +15,14 @@ public class ProductManager : IProductService
 
     public IEnumerable<Comment> AddOneCommentByProductId(int productId, string text)
     {
-        var product = GetOneProduct(productId);
-        
+        var product = GetOneProductByProductId(productId);
+
         var comment = new Comment()
         {
             Text = text,
             ProductId = productId,
         };
-        
+
         _manager.CommentRepository.CreateOne(comment);
         _manager.Save();
 
@@ -33,9 +33,9 @@ public class ProductManager : IProductService
 
     public Product? CreateOneProduct(Product product)
     {
-        if(product is null)
+        if (product is null)
             throw new ArgumentNullException("product");
-        
+
         _manager.ProductRepository.CreateOne(product);
         _manager.Save();
         return product;
@@ -43,7 +43,7 @@ public class ProductManager : IProductService
 
     public void DeleteOneProduct(int id)
     {
-        var entity = GetOneProduct(id);
+        var entity = GetOneProductByProductId(id);
         _manager.ProductRepository.DeleteOne(entity!);
         _manager.Save();
     }
@@ -55,7 +55,7 @@ public class ProductManager : IProductService
             .GetAllProductsWithDetails();
     }
 
-    public Product? GetOneProduct(int id)
+    public Product? GetOneProductByProductId(int id)
     {
         var entity = _manager
             .ProductRepository
@@ -69,14 +69,18 @@ public class ProductManager : IProductService
 
     public Product? UpdateOneProduct(int id, Product product)
     {
-        var entity = GetOneProduct(id);
+        var entity = GetOneProductByProductId(id);
+
+        if (!id.Equals(product.Id))
+            throw new Exception("Parameters are not matched.");
+
         entity!.Name = product.Name;
         entity!.Price = product.Price;
         entity!.Comments = product.Comments;
-        
+
         _manager.ProductRepository.UpdateOne(entity);
         _manager.Save();
-        
+
         return entity;
     }
 }
