@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using Api.Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Repositories;
 using Repositories.Contracts;
@@ -19,9 +20,10 @@ builder
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<IRepositoryManager, RepositoryManager>(); // register
-builder.Services.AddScoped<IProductRepository, ProductRepository>(); // register
-builder.Services.AddScoped<ICommentRepository, CommentRepository>(); // register
+
+builder.Services.ConfigureRepositories();
+builder.Services.ConfigureServices();
+
 builder.Services.AddDbContext<RepositoryContext>(options =>
 {
     options.UseSqlite(builder.Configuration.GetConnectionString("sqliteconnection"),
