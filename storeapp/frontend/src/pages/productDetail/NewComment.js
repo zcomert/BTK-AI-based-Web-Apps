@@ -5,6 +5,7 @@ import ProductService from '../../services/ProductService';
 import SendIcon from '@mui/icons-material/Send';
 import ProgressBar from '../../components/progressBar/ProgressBar';
 import AppContext from '../../context/AppContext';
+import SentimentService from '../../services/SentimentService';
 
 function NewComment({ setSelectedProduct, selectedProduct }) {
 
@@ -16,6 +17,14 @@ function NewComment({ setSelectedProduct, selectedProduct }) {
     const [values, setValues] = useState(initialValues);
 
     const handleChange = (e) => {
+
+        const sentimentService = new SentimentService();
+        sentimentService
+            .makePredict(e.target.value)
+            .then(resp => {
+                console.log(resp);
+            })
+
         setValues({
             ...values,
             [e.target.name]: e.target.value
