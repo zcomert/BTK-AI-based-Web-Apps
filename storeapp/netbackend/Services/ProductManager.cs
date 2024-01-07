@@ -62,7 +62,7 @@ public class ProductManager : IProductService
     {
         var entity = _manager
             .ProductRepository
-            .GetOne(p => p.Id.Equals(id));
+            .GetOneProductWithDetails(id);
 
         if (entity is null)
             throw new Exception($"Product with id {id} not found.");

@@ -67,6 +67,11 @@ public class FakeProductRepository : IProductRepository
             .SingleOrDefault(filter);
     }
 
+    public Product? GetOneProductWithDetails(int id)
+    {
+        throw new NotImplementedException();
+    }
+
     public Product? UpdateOne(Product entity)
     {
         throw new NotImplementedException();

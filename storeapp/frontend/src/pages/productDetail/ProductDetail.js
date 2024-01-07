@@ -24,6 +24,7 @@ export default function ProductDetail() {
             .getOneProductById(id)
             .then(resp => {
                 setSelectedProduct(resp)
+                console.log(selectedProduct)
                 setLoad(false);
             })
     }, [])
@@ -59,14 +60,14 @@ export default function ProductDetail() {
                         setSelectedProduct={setSelectedProduct} />
                 </p>
 
-                <p>
+                {/* <p>
                     <Button
                         onClick={() => { navigate("/products") }}
                         startIcon={<ViewListIcon />}
                         variant='outlined'>
                         Ürünüler
                     </Button>
-                </p>
+                </p> */}
             </Container>
         </>
     )

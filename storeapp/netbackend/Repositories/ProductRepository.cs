@@ -18,5 +18,12 @@ public sealed class ProductRepository : RepositoryBase<Product>, IProductReposit
             .Products
             .Include(p => p.Comments);
     }
-   
+
+    public Product? GetOneProductWithDetails(int id)
+    {
+        return _context
+            .Products
+            .Include(p => p.Comments)
+            .SingleOrDefault(p => p.Id.Equals(id));
+    }
 }

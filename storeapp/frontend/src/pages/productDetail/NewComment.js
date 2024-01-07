@@ -9,7 +9,7 @@ import AppContext from '../../context/AppContext';
 function NewComment({ setSelectedProduct, selectedProduct }) {
 
     const initialValues = {
-        id: selectedProduct?.comments.length + 1,
+        // id: selectedProduct?.comments.length + 1,
         text: ''
     };
 
